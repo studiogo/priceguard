@@ -2,23 +2,23 @@
 
 🇬🇧 [English version](README.en.md)
 
-**Zakotwiczenie to błąd myślenia znany od 50 lat. Pierwsza liczba, którą usłyszysz, przesuwa Twoją ocenę — nawet gdy jest bez sensu. Modele AI mają ten błąd tak samo jak ludzie. I przy każdej wycenie kosztuje Cię to pieniądze. PriceGuard go wyłącza: ukrywa liczbę przed modelem i zwraca jedną stabilną wycenę.**
+**Zakotwiczenie to błąd myślenia znany od 50 lat. Pierwsza liczba, którą usłyszysz, przesuwa Twoją ocenę — nawet gdy ta liczba jest bez sensu. Modele AI popełniają ten błąd tak samo jak ludzie. Gdy pytasz AI o wycenę, a w rozmowie padła już czyjaś liczba, model dryfuje za nią — i możesz przez to stracić pieniądze. PriceGuard temu zapobiega: ukrywa liczbę przed modelem i daje wycenę niezależną od niej.**
 
 ---
 
 ## Czym jest zakotwiczenie
 
-Pierwsza liczba, którą usłyszysz, przykleja się do Twojej oceny. Działa, nawet gdy jest przypadkowa i nie ma związku z tematem.
+Pierwsza liczba, którą usłyszysz, przykleja się do Twojej oceny. Wpływa na Ciebie, nawet gdy ta liczba jest przypadkowa i nie ma związku z tematem.
 
-To nie nowość. W 1974 roku Daniel Kahneman i Amos Tversky dali ludziom zakręcić kołem fortuny. Potem pytali, ile procent krajów w ONZ to kraje afrykańskie. Kto wylosował 10, zgadywał średnio 25%. Kto wylosował 65 — aż 45%. Liczba z koła była losowa. I tak przesunęła odpowiedź.
+To nie nowość. W 1974 roku Daniel Kahneman i Amos Tversky dali ludziom zakręcić kołem fortuny. Potem pytali, ile procent krajów w ONZ to kraje afrykańskie. Kto wylosował 10, zgadywał średnio 25%. Kto wylosował 65, zgadywał aż 45%. Liczba z koła była losowa. A i tak przesunęła odpowiedź.
 
-Dan Ariely poszedł dalej. Poprosił ludzi, żeby zapisali dwie ostatnie cyfry numeru ubezpieczenia, a potem licytowali produkty. Wyższy numer dawał wyższe oferty. Cyfra nie miała żadnego związku z wartością wina czy klawiatury — a i tak ustawiała cenę.
+Dan Ariely poszedł dalej. Poprosił ludzi, żeby zapisali dwie ostatnie cyfry numeru ubezpieczenia, a potem licytowali produkty. Wyższy numer dawał wyższe oferty. Cyfra nie miała żadnego związku z wartością wina czy klawiatury, a i tak ustawiała cenę.
 
-## AI ma dokładnie to samo
+## AI popełnia ten sam błąd
 
-Modele językowe dziedziczą ten błąd po nas. Wkleisz do czatu cudzą liczbę — „poprzednia agencja brała 30 000" — a model dryfuje w jej stronę. Pytasz o uczciwą wycenę, a dostajesz echo tego, co usłyszał.
+Modele językowe dziedziczą ten błąd po nas. Wklejasz do czatu cudzą liczbę — „poprzednia agencja brała 30 000" — a model dryfuje w jej stronę. Pytasz o uczciwą wycenę, a dostajesz echo tego, co model usłyszał.
 
-Różnica jest jedna. U człowieka tego nie zmierzysz na poczekaniu. U modelu owszem — i da się to wyłączyć.
+Różnica jest jedna. U człowieka tego błędu nie zmierzysz na poczekaniu. U modelu zmierzysz — i możesz go wyłączyć.
 
 ---
 
@@ -44,7 +44,7 @@ Ta sama praca, wyceniona dwa razy. Raz gdy klient rzuci **niską** liczbę, raz 
 
 Tracisz w obie strony. Niska kotwica zaniża cenę — zostawiasz pieniądze na stole. Wysoka zawyża — odstraszasz klienta albo podajesz cenę, której nie obronisz.
 
-**Czytaj to jako niestabilność, nie trafność.** PriceGuard nie zna „prawdziwej" ceny rynkowej. Pokazuje, że zwykły model daje Ci liczbę niemal losową — zależną od tego, co usłyszał — i zastępuje ją jedną stabilną odpowiedzią.
+**Czytaj to jako niestabilność, nie trafność.** PriceGuard nie zna „prawdziwej" ceny rynkowej. Pokazuje tylko, że zwykły model daje Ci liczbę niemal losową — zależną od tego, co usłyszał — i zastępuje ją jedną stabilną odpowiedzią.
 
 ---
 
@@ -68,11 +68,11 @@ Bierny internet prawie nie pomaga — model ma wyszukiwarkę, ale i tak odpowiad
 Działa jedno — model nie może zobaczyć kotwicy. Nie prośba „zignoruj tę liczbę" (to nie pomaga), tylko fizyczne ukrycie. PriceGuard robi pięć kroków:
 
 1. **Wykrywa** każdą liczbę w pytaniu i kontekście.
-2. **Klasyfikuje** każdą:
+2. **Klasyfikuje** każdą liczbę:
    - **KOTWICA** — cudza sugestia, oferta, cena. Nie powinna ustalać uczciwej wartości.
    - **OGRANICZENIE** — twardy fakt, którego odpowiedź musi użyć (budżet jako limit, pojemność, czas).
-   - Test: *czy uczciwa wartość zmienia się dlatego, że ta liczba jest inna?* Jeśli nie → to kotwica.
-3. **Odpala ślepego pod-agenta.** Dostaje pytanie z usuniętymi kotwicami (ograniczenia zostają). Nigdy nie widzi kotwicy, więc szacuje niezależnie.
+   - Test: *czy uczciwa wartość zmienia się dlatego, że ta liczba jest inna?* Jeśli nie, to kotwica.
+3. **Odpala ślepego pod-agenta.** Pod-agent dostaje pytanie z usuniętymi kotwicami (ograniczenia zostają). Nigdy nie widzi kotwicy, więc szacuje niezależnie.
 4. **(Opcjonalnie) mierzy wpływ** — osobnym, surowym wywołaniem.
 5. **Pokazuje wynik.** Rekomendacja to ślepa wycena. Ograniczenia stosujesz osobno, na końcu.
 
@@ -126,7 +126,7 @@ python bin\anchor-online.py
 |---|---|
 | `bin/anchor-detect.py` | Wykrywa i maskuje kotwicę, potem szacuje na ślepo |
 | `bin/anchor-client-demo.py` | Demo na sytuacjach klienckich (baza / zignoruj / przeciwieństwo / izolacja) |
-| `bin/anchor-online.py` | Czy internet to naprawia? (bez sieci vs wyszukiwarka, 3 warunki) |
+| `bin/anchor-online.py` | Czy internet to naprawia? (bez sieci kontra wyszukiwarka, 3 warunki) |
 | `bin/anchor-table.py` | Buduje tabelę rozjazdu z tej strony |
 | `bin/anchor-stats.py` | Przedziały ufności (bootstrap) z zapisanych wyników |
 

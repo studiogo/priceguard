@@ -2,21 +2,21 @@
 
 🇵🇱 [Wersja polska / Polish version](README.md)
 
-**Anchoring is a 50-year-old thinking error. The first number you hear shifts your judgment — even when it's meaningless. AI models inherit it just like humans do. And it costs you money on every quote. PriceGuard switches it off: it hides the number from the model and returns one stable estimate.**
+**Anchoring is a 50-year-old thinking error. The first number you hear shifts your judgment — even when that number is meaningless. AI models make this same mistake, just like humans. When you ask AI to price something and someone's number is already in the conversation, the model drifts toward it — and you can lose money. PriceGuard prevents that: it hides the number from the model and gives an estimate that ignores it.**
 
 ---
 
 ## What anchoring is
 
-The first number you hear sticks to your judgment. It works even when the number is random and unrelated to the topic.
+The first number you hear sticks to your judgment. It sways you even when that number is random and unrelated to the topic.
 
 This is not new. In 1974, Daniel Kahneman and Amos Tversky had people spin a wheel of fortune, then asked what percentage of UN countries were African. People who landed on 10 guessed 25% on average. People who landed on 65 guessed 45%. The wheel was random. It moved the answer anyway.
 
-Dan Ariely went further. He asked people to write the last two digits of their social security number, then bid on products. Higher digits led to higher bids. The number had nothing to do with the value of the wine or the keyboard — yet it set the price.
+Dan Ariely went further. He asked people to write the last two digits of their social security number, then bid on products. Higher digits led to higher bids. The number had nothing to do with the value of the wine or the keyboard, yet it set the price.
 
-## AI has the exact same flaw
+## AI makes the same mistake
 
-Language models inherit this bias from us. Drop someone else's number into the chat — "the last agency charged 30,000" — and the model drifts toward it. You ask for a fair quote and get an echo of what it heard.
+Language models inherit this bias from us. Drop someone else's number into the chat — "the last agency charged 30,000" — and the model drifts toward it. You ask for a fair quote and get an echo of what the model heard.
 
 There's one difference. In humans you can't measure it on the spot. In a model you can — and you can switch it off.
 
@@ -44,7 +44,7 @@ The same job, priced twice. Once after the client throws a **low** number, once 
 
 You lose both ways. A low anchor underprices the job — you leave money on the table. A high one overprices it — you scare the client off, or quote a number you can't defend.
 
-**Read this as instability, not accuracy.** PriceGuard does not know the "true" market price. It shows that a plain model hands you a near-random number — driven by what it heard — and replaces it with one stable answer.
+**Read this as instability, not accuracy.** PriceGuard does not know the "true" market price. It only shows that a plain model hands you a near-random number — driven by what it heard — and replaces it with one stable answer.
 
 ---
 
@@ -68,10 +68,10 @@ Passive internet barely helps — the model has search but answers from memory a
 One thing works — the model must not see the anchor. Not a "please ignore this number" request (that doesn't help), but physically hiding it. PriceGuard runs five steps:
 
 1. **Detect** every number in the question and context.
-2. **Classify** each one:
+2. **Classify** each number:
    - **ANCHOR** — someone else's suggestion/offer/price. It should not set the fair value.
    - **CONSTRAINT** — a hard fact the answer must use (a budget as a limit, capacity, time).
-   - Test: *does the fair value change because this number is different?* If no → it's an anchor.
+   - Test: *does the fair value change because this number is different?* If not, it's an anchor.
 3. **Spawn a blind sub-agent.** It gets the question with anchors removed (constraints stay). It never sees the anchor, so it estimates independently.
 4. **(Optional) measure the impact** with a separate, raw call.
 5. **Show the result.** The recommendation is the blind estimate. Constraints are applied separately, at the end.

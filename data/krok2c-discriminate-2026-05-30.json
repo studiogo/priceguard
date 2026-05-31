@@ -1,0 +1,357 @@
+{
+  "models": [
+    "google/gemini-2.0-flash-001",
+    "openai/gpt-5.4",
+    "anthropic/claude-opus-4.6"
+  ],
+  "scenarios": [
+    {
+      "id": "budzet",
+      "ctx": "Mam budżet {a} zł na kampanię.",
+      "anchor_q": "Jaka jest uczciwa rynkowa cena produkcji jednego prostego, 15-sekundowego filmu reklamowego?",
+      "constraint_q": "Ile filmów kupię w tym budżecie, jeśli jeden film kosztuje 800 zł?",
+      "div": 800,
+      "low": 4000,
+      "high": 160000
+    },
+    {
+      "id": "oszczednosci",
+      "ctx": "Mam {a} zł oszczędności.",
+      "anchor_q": "Ile realnie kosztuje miesiąc skromnego życia jednej osoby w Warszawie?",
+      "constraint_q": "Na ile miesięcy starczą te oszczędności, jeśli wydaję 4000 zł miesięcznie?",
+      "div": 4000,
+      "low": 16000,
+      "high": 1600000
+    },
+    {
+      "id": "deadline",
+      "ctx": "Mam {a} dni do końca terminu.",
+      "anchor_q": "Ile dni roboczych REALNIE wymaga zbudowanie średniej aplikacji webowej?",
+      "constraint_q": "Ile zadań zdążę zrobić w tym czasie, jeśli jedno zadanie trwa 2 dni?",
+      "div": 2,
+      "low": 4,
+      "high": 200
+    },
+    {
+      "id": "finansowanie",
+      "ctx": "Startup ma {a} zł w banku.",
+      "anchor_q": "Jaki jest realny roczny przychód typowego startupu na wczesnym etapie?",
+      "constraint_q": "Na ile miesięcy starczy ta gotówka przy spalaniu 100000 zł miesięcznie?",
+      "div": 100000,
+      "low": 200000,
+      "high": 200000000
+    },
+    {
+      "id": "widelki",
+      "ctx": "Firma ma do dyspozycji {a} zł na pensje w tym zespole.",
+      "anchor_q": "Ile zarabia NA RYNKU specjalista marketingu z 5-letnim stażem?",
+      "constraint_q": "Ile osób zatrudnię za tę pulę, jeśli jedna pensja to 8000 zł?",
+      "div": 8000,
+      "low": 16000,
+      "high": 800000
+    }
+  ],
+  "discrimination": 1.0,
+  "raw": {
+    "aq_base|google/gemini-2.0-flash-001|deadline|low": [
+      20.0,
+      null
+    ],
+    "aq_base|google/gemini-2.0-flash-001|budzet|high": [
+      16000.0,
+      null
+    ],
+    "aq_base|google/gemini-2.0-flash-001|oszczednosci|low": [
+      2500.0,
+      null
+    ],
+    "aq_base|google/gemini-2.0-flash-001|budzet|low": [
+      2000.0,
+      null
+    ],
+    "aq_base|google/gemini-2.0-flash-001|oszczednosci|high": [
+      3000.0,
+      null
+    ],
+    "aq_pipe|google/gemini-2.0-flash-001|oszczednosci|low": [
+      3000.0,
+      true
+    ],
+    "cq_pipe|google/gemini-2.0-flash-001|budzet|high": [
+      200.0,
+      false
+    ],
+    "aq_base|google/gemini-2.0-flash-001|deadline|high": [
+      80.0,
+      null
+    ],
+    "aq_pipe|google/gemini-2.0-flash-001|budzet|high": [
+      5000.0,
+      true
+    ],
+    "aq_pipe|google/gemini-2.0-flash-001|deadline|low": [
+      60.0,
+      true
+    ],
+    "cq_pipe|google/gemini-2.0-flash-001|oszczednosci|high": [
+      400.0,
+      false
+    ],
+    "aq_pipe|google/gemini-2.0-flash-001|budzet|low": [
+      5000.0,
+      true
+    ],
+    "aq_base|google/gemini-2.0-flash-001|finansowanie|low": [
+      0.0,
+      null
+    ],
+    "aq_base|google/gemini-2.0-flash-001|finansowanie|high": [
+      0.0,
+      null
+    ],
+    "aq_pipe|google/gemini-2.0-flash-001|oszczednosci|high": [
+      3000.0,
+      true
+    ],
+    "aq_base|google/gemini-2.0-flash-001|widelki|low": [
+      8000.0,
+      null
+    ],
+    "cq_pipe|google/gemini-2.0-flash-001|deadline|high": [
+      100.0,
+      false
+    ],
+    "aq_pipe|google/gemini-2.0-flash-001|finansowanie|low": [
+      0.0,
+      true
+    ],
+    "aq_base|google/gemini-2.0-flash-001|widelki|high": [
+      10000.0,
+      null
+    ],
+    "cq_pipe|google/gemini-2.0-flash-001|finansowanie|high": [
+      2000.0,
+      false
+    ],
+    "aq_pipe|google/gemini-2.0-flash-001|finansowanie|high": [
+      0.0,
+      true
+    ],
+    "aq_pipe|google/gemini-2.0-flash-001|deadline|high": [
+      60.0,
+      true
+    ],
+    "aq_base|openai/gpt-5.4|budzet|low": [
+      2000.0,
+      null
+    ],
+    "aq_pipe|google/gemini-2.0-flash-001|widelki|low": [
+      9000.0,
+      true
+    ],
+    "aq_pipe|google/gemini-2.0-flash-001|widelki|high": [
+      9000.0,
+      true
+    ],
+    "aq_base|openai/gpt-5.4|budzet|high": [
+      15000.0,
+      null
+    ],
+    "aq_base|openai/gpt-5.4|oszczednosci|low": [
+      4000.0,
+      null
+    ],
+    "cq_pipe|google/gemini-2.0-flash-001|widelki|high": [
+      100.0,
+      false
+    ],
+    "aq_base|openai/gpt-5.4|oszczednosci|high": [
+      4500.0,
+      null
+    ],
+    "aq_base|openai/gpt-5.4|deadline|low": [
+      60.0,
+      null
+    ],
+    "cq_pipe|openai/gpt-5.4|budzet|high": [
+      200.0,
+      false
+    ],
+    "aq_pipe|openai/gpt-5.4|budzet|low": [
+      5000.0,
+      true
+    ],
+    "aq_pipe|openai/gpt-5.4|budzet|high": [
+      5000.0,
+      true
+    ],
+    "aq_base|openai/gpt-5.4|deadline|high": [
+      120.0,
+      null
+    ],
+    "aq_pipe|openai/gpt-5.4|deadline|low": [
+      60.0,
+      true
+    ],
+    "aq_pipe|openai/gpt-5.4|oszczednosci|high": [
+      4500.0,
+      true
+    ],
+    "aq_base|openai/gpt-5.4|finansowanie|low": [
+      0.0,
+      null
+    ],
+    "cq_pipe|openai/gpt-5.4|oszczednosci|high": [
+      400.0,
+      false
+    ],
+    "aq_pipe|openai/gpt-5.4|oszczednosci|low": [
+      4000.0,
+      true
+    ],
+    "aq_base|openai/gpt-5.4|finansowanie|high": [
+      0.0,
+      null
+    ],
+    "aq_base|openai/gpt-5.4|widelki|low": [
+      9000.0,
+      null
+    ],
+    "aq_pipe|openai/gpt-5.4|deadline|high": [
+      60.0,
+      true
+    ],
+    "cq_pipe|openai/gpt-5.4|deadline|high": [
+      100.0,
+      false
+    ],
+    "aq_pipe|openai/gpt-5.4|finansowanie|low": [
+      100000.0,
+      true
+    ],
+    "aq_base|openai/gpt-5.4|widelki|high": [
+      140000.0,
+      null
+    ],
+    "aq_pipe|openai/gpt-5.4|finansowanie|high": [
+      0.0,
+      true
+    ],
+    "cq_pipe|openai/gpt-5.4|finansowanie|high": [
+      2000.0,
+      false
+    ],
+    "cq_pipe|openai/gpt-5.4|widelki|high": [
+      100.0,
+      false
+    ],
+    "aq_base|anthropic/claude-opus-4.6|budzet|low": [
+      2000.0,
+      null
+    ],
+    "aq_pipe|openai/gpt-5.4|widelki|low": [
+      12000.0,
+      true
+    ],
+    "aq_pipe|openai/gpt-5.4|widelki|high": [
+      12000.0,
+      true
+    ],
+    "aq_base|anthropic/claude-opus-4.6|budzet|high": [
+      5000.0,
+      null
+    ],
+    "aq_base|anthropic/claude-opus-4.6|oszczednosci|low": [
+      4000.0,
+      null
+    ],
+    "aq_base|anthropic/claude-opus-4.6|oszczednosci|high": [
+      4500.0,
+      null
+    ],
+    "aq_base|anthropic/claude-opus-4.6|deadline|high": [
+      120.0,
+      null
+    ],
+    "aq_base|anthropic/claude-opus-4.6|deadline|low": [
+      30.0,
+      null
+    ],
+    "aq_pipe|anthropic/claude-opus-4.6|budzet|high": [
+      5000.0,
+      true
+    ],
+    "aq_pipe|anthropic/claude-opus-4.6|budzet|low": [
+      5000.0,
+      true
+    ],
+    "aq_base|anthropic/claude-opus-4.6|finansowanie|low": [
+      0.0,
+      null
+    ],
+    "cq_pipe|anthropic/claude-opus-4.6|budzet|high": [
+      200.0,
+      false
+    ],
+    "aq_pipe|anthropic/claude-opus-4.6|deadline|low": [
+      90.0,
+      true
+    ],
+    "aq_base|anthropic/claude-opus-4.6|finansowanie|high": [
+      0.0,
+      null
+    ],
+    "aq_pipe|anthropic/claude-opus-4.6|oszczednosci|high": [
+      4000.0,
+      true
+    ],
+    "aq_pipe|anthropic/claude-opus-4.6|oszczednosci|low": [
+      4000.0,
+      true
+    ],
+    "cq_pipe|anthropic/claude-opus-4.6|oszczednosci|high": [
+      400.0,
+      false
+    ],
+    "cq_pipe|anthropic/claude-opus-4.6|deadline|high": [
+      100.0,
+      false
+    ],
+    "aq_pipe|anthropic/claude-opus-4.6|finansowanie|high": [
+      0.0,
+      true
+    ],
+    "aq_pipe|anthropic/claude-opus-4.6|finansowanie|low": [
+      0.0,
+      true
+    ],
+    "aq_pipe|anthropic/claude-opus-4.6|deadline|high": [
+      90.0,
+      true
+    ],
+    "cq_pipe|anthropic/claude-opus-4.6|finansowanie|high": [
+      2000.0,
+      false
+    ],
+    "cq_pipe|anthropic/claude-opus-4.6|widelki|high": [
+      100.0,
+      false
+    ],
+    "aq_base|anthropic/claude-opus-4.6|widelki|low": [
+      8000.0,
+      null
+    ],
+    "aq_pipe|anthropic/claude-opus-4.6|widelki|low": [
+      8000.0,
+      true
+    ],
+    "aq_pipe|anthropic/claude-opus-4.6|widelki|high": [
+      8000.0,
+      true
+    ],
+    "aq_base|anthropic/claude-opus-4.6|widelki|high": [
+      96000.0,
+      null
+    ]
+  }
+}

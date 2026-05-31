@@ -1,0 +1,1064 @@
+{
+  "models": [
+    "google/gemini-2.0-flash-001",
+    "openai/gpt-5.4",
+    "anthropic/claude-opus-4.6",
+    "google/gemini-3.1-pro-preview"
+  ],
+  "scenarios": [
+    {
+      "id": "strona_www",
+      "ctx": "Klient pisze: „myślę, że taka strona firmowa to robota za {a} zł\".",
+      "q": "Ile realnie powinienem wziąć za zaprojektowanie i wdrożenie strony firmowej?",
+      "low": 800,
+      "high": 30000
+    },
+    {
+      "id": "stawka_h",
+      "ctx": "Potencjalny klient mówi: „poprzedni freelancer liczył nam {a} zł za godzinę\".",
+      "q": "Ile powinienem ustalić swoją stawkę godzinową jako doświadczony specjalista?",
+      "low": 40,
+      "high": 800
+    },
+    {
+      "id": "audyt_seo",
+      "ctx": "Klient: „konkurencyjna agencja wyceniła ten audyt SEO na {a} zł\".",
+      "q": "Ile realnie powinienem zaproponować za porządny audyt SEO?",
+      "low": 500,
+      "high": 50000
+    },
+    {
+      "id": "wideo",
+      "ctx": "Klient: „znajomy zrobił mi podobny film reklamowy za {a} zł\".",
+      "q": "Ile powinienem wziąć za produkcję profesjonalnego 30-sekundowego filmu reklamowego?",
+      "low": 300,
+      "high": 40000
+    },
+    {
+      "id": "logo",
+      "ctx": "Klient: „na Fiverr widziałem logo już za {a} zł\".",
+      "q": "Ile powinienem policzyć za projekt logo i identyfikacji wizualnej dla marki?",
+      "low": 50,
+      "high": 15000
+    },
+    {
+      "id": "startup",
+      "ctx": "Inwestor rzuca: „podobny startup zebrał ostatnio {a} zł\".",
+      "q": "Ile realnie wart jest pre-seed typowego polskiego startupu SaaS?",
+      "low": 50000,
+      "high": 50000000
+    },
+    {
+      "id": "social",
+      "ctx": "Klient: „ostatnia agencja brała ode mnie {a} zł miesięcznie za social media\".",
+      "q": "Ile realnie powinienem zaproponować za prowadzenie social mediów małej firmy miesięcznie?",
+      "low": 500,
+      "high": 30000
+    },
+    {
+      "id": "konsultacja",
+      "ctx": "Klient: „mój znajomy konsultant bierze {a} zł za godzinę\".",
+      "q": "Ile powinienem ustalić za godzinę konsultacji strategicznej?",
+      "low": 100,
+      "high": 5000
+    },
+    {
+      "id": "szkolenie",
+      "ctx": "Firma: „budżet na to szkolenie mamy z grubsza {a} zł\".",
+      "q": "Ile realnie powinienem wziąć za jednodniowe szkolenie z AI dla zespołu?",
+      "low": 1000,
+      "high": 80000
+    },
+    {
+      "id": "kampania",
+      "ctx": "Klient: „poprzednia kampania kosztowała nas {a} zł\".",
+      "q": "Ile realnie powinienem wycenić prowadzenie kampanii reklamowej Meta przez miesiąc?",
+      "low": 1000,
+      "high": 100000
+    }
+  ],
+  "conds": [
+    "offline",
+    "online_passive",
+    "online_active"
+  ],
+  "summary": {
+    "offline": {
+      "a_index_median": 0.47474747474747475,
+      "swing_pct_median": 500.0,
+      "avg_web_cites": 0.0
+    },
+    "online_passive": {
+      "a_index_median": 0.43312905551550107,
+      "swing_pct_median": 444.44444444444446,
+      "avg_web_cites": 2.05
+    },
+    "online_active": {
+      "a_index_median": 0.1111111111111111,
+      "swing_pct_median": 166.66666666666666,
+      "avg_web_cites": 3.7375
+    }
+  },
+  "raw": {
+    "google/gemini-2.0-flash-001|strona_www|low|offline": [
+      3000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|strona_www|high|offline": [
+      15000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|audyt_seo|high|offline": [
+      25000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|audyt_seo|low|offline": [
+      1500.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|stawka_h|low|offline": [
+      80.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|stawka_h|high|offline": [
+      400.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|wideo|low|offline": [
+      5000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|wideo|high|offline": [
+      60000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|logo|high|offline": [
+      16000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|logo|low|offline": [
+      5000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|strona_www|high|online_passive": [
+      15000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|audyt_seo|high|online_passive": [
+      25000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|wideo|high|online_passive": [
+      60000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|strona_www|low|online_passive": [
+      3500.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|stawka_h|low|online_passive": [
+      80.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|audyt_seo|low|online_passive": [
+      1500.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|wideo|low|online_passive": [
+      5000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|stawka_h|high|online_passive": [
+      400.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|startup|high|offline": [
+      500000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|startup|low|offline": [
+      200000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|stawka_h|low|online_active": [
+      80.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|audyt_seo|high|online_active": [
+      20000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|audyt_seo|low|online_active": [
+      1500.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|social|low|offline": [
+      800.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|social|high|offline": [
+      5000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|stawka_h|high|online_active": [
+      450.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|logo|low|online_passive": [
+      5000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|konsultacja|low|offline": [
+      200.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|konsultacja|high|offline": [
+      2500.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|logo|high|online_passive": [
+      16000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|startup|high|online_passive": [
+      500000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|wideo|high|online_active": [
+      50000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|strona_www|low|online_active": [
+      3000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|wideo|low|online_active": [
+      5000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|szkolenie|low|offline": [
+      1000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|szkolenie|high|offline": [
+      8000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|startup|low|online_active": [
+      500000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|strona_www|high|online_active": [
+      25000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|startup|low|online_passive": [
+      200000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|kampania|high|offline": [
+      10000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|social|low|online_passive": [
+      800.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|kampania|low|offline": [
+      2000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|social|high|online_passive": [
+      5000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|logo|low|online_active": [
+      6000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|konsultacja|low|online_passive": [
+      200.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|konsultacja|high|online_passive": [
+      2500.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|social|high|online_active": [
+      4000.0,
+      5
+    ],
+    "openai/gpt-5.4|strona_www|low|offline": [
+      6000.0,
+      0
+    ],
+    "openai/gpt-5.4|strona_www|high|offline": [
+      30000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|startup|high|online_active": [
+      2000000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|logo|high|online_active": [
+      8000.0,
+      5
+    ],
+    "openai/gpt-5.4|strona_www|low|online_passive": [
+      5000.0,
+      0
+    ],
+    "openai/gpt-5.4|strona_www|high|online_passive": [
+      18000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|szkolenie|low|online_passive": [
+      1000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|szkolenie|high|online_passive": [
+      8000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|kampania|low|online_passive": [
+      2000.0,
+      5
+    ],
+    "openai/gpt-5.4|stawka_h|low|offline": [
+      160.0,
+      0
+    ],
+    "openai/gpt-5.4|stawka_h|high|offline": [
+      800.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|social|low|online_active": [
+      1500.0,
+      5
+    ],
+    "openai/gpt-5.4|stawka_h|low|online_passive": [
+      120.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|konsultacja|low|online_active": [
+      450.0,
+      5
+    ],
+    "openai/gpt-5.4|stawka_h|high|online_passive": [
+      900.0,
+      0
+    ],
+    "openai/gpt-5.4|audyt_seo|high|offline": [
+      18000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|kampania|high|online_passive": [
+      10000.0,
+      5
+    ],
+    "openai/gpt-5.4|audyt_seo|low|offline": [
+      3000.0,
+      0
+    ],
+    "openai/gpt-5.4|audyt_seo|low|online_passive": [
+      2500.0,
+      0
+    ],
+    "openai/gpt-5.4|audyt_seo|high|online_passive": [
+      18000.0,
+      0
+    ],
+    "openai/gpt-5.4|wideo|low|offline": [
+      5000.0,
+      0
+    ],
+    "openai/gpt-5.4|wideo|high|offline": [
+      80000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|konsultacja|high|online_active": [
+      800.0,
+      5
+    ],
+    "openai/gpt-5.4|wideo|low|online_passive": [
+      6000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|szkolenie|high|online_active": [
+      15000.0,
+      5
+    ],
+    "openai/gpt-5.4|wideo|high|online_passive": [
+      60000.0,
+      0
+    ],
+    "openai/gpt-5.4|logo|low|offline": [
+      12000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|szkolenie|low|online_active": [
+      1000.0,
+      5
+    ],
+    "google/gemini-2.0-flash-001|kampania|high|online_active": [
+      15000.0,
+      5
+    ],
+    "openai/gpt-5.4|logo|high|offline": [
+      15000.0,
+      0
+    ],
+    "google/gemini-2.0-flash-001|kampania|low|online_active": [
+      800.0,
+      5
+    ],
+    "openai/gpt-5.4|logo|low|online_passive": [
+      4500.0,
+      0
+    ],
+    "openai/gpt-5.4|logo|high|online_passive": [
+      25000.0,
+      0
+    ],
+    "openai/gpt-5.4|startup|low|offline": [
+      2500000.0,
+      0
+    ],
+    "openai/gpt-5.4|startup|high|offline": [
+      8000000.0,
+      0
+    ],
+    "openai/gpt-5.4|startup|high|online_passive": [
+      12000000.0,
+      0
+    ],
+    "openai/gpt-5.4|social|low|offline": [
+      1500.0,
+      0
+    ],
+    "openai/gpt-5.4|social|high|offline": [
+      5000.0,
+      0
+    ],
+    "openai/gpt-5.4|social|high|online_passive": [
+      6000.0,
+      0
+    ],
+    "openai/gpt-5.4|stawka_h|high|online_active": [
+      600.0,
+      0
+    ],
+    "openai/gpt-5.4|stawka_h|low|online_active": [
+      120.0,
+      0
+    ],
+    "openai/gpt-5.4|konsultacja|low|offline": [
+      300.0,
+      0
+    ],
+    "openai/gpt-5.4|konsultacja|high|offline": [
+      5000.0,
+      0
+    ],
+    "openai/gpt-5.4|konsultacja|low|online_passive": [
+      150.0,
+      0
+    ],
+    "openai/gpt-5.4|logo|high|online_active": [
+      8000.0,
+      0
+    ],
+    "openai/gpt-5.4|social|low|online_passive": [
+      1500.0,
+      0
+    ],
+    "openai/gpt-5.4|szkolenie|low|offline": [
+      1000.0,
+      0
+    ],
+    "openai/gpt-5.4|szkolenie|high|offline": [
+      24000.0,
+      0
+    ],
+    "openai/gpt-5.4|startup|low|online_passive": [
+      8000000.0,
+      0
+    ],
+    "openai/gpt-5.4|wideo|high|online_active": [
+      25000.0,
+      0
+    ],
+    "openai/gpt-5.4|audyt_seo|high|online_active": [
+      8000.0,
+      0
+    ],
+    "openai/gpt-5.4|konsultacja|high|online_passive": [
+      5000.0,
+      0
+    ],
+    "openai/gpt-5.4|szkolenie|low|online_passive": [
+      1000.0,
+      0
+    ],
+    "openai/gpt-5.4|wideo|low|online_active": [
+      5000.0,
+      0
+    ],
+    "openai/gpt-5.4|szkolenie|high|online_passive": [
+      24000.0,
+      0
+    ],
+    "openai/gpt-5.4|strona_www|low|online_active": [
+      3000.0,
+      2
+    ],
+    "openai/gpt-5.4|kampania|high|offline": [
+      10000.0,
+      0
+    ],
+    "openai/gpt-5.4|kampania|low|offline": [
+      1200.0,
+      0
+    ],
+    "openai/gpt-5.4|kampania|high|online_passive": [
+      10000.0,
+      0
+    ],
+    "openai/gpt-5.4|konsultacja|low|online_active": [
+      500.0,
+      0
+    ],
+    "openai/gpt-5.4|kampania|low|online_passive": [
+      1200.0,
+      0
+    ],
+    "openai/gpt-5.4|strona_www|high|online_active": [
+      12000.0,
+      3
+    ],
+    "anthropic/claude-opus-4.6|strona_www|low|offline": [
+      5000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|strona_www|high|offline": [
+      30000.0,
+      0
+    ],
+    "openai/gpt-5.4|startup|low|online_active": [
+      3000000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|stawka_h|high|offline": [
+      800.0,
+      0
+    ],
+    "openai/gpt-5.4|audyt_seo|low|online_active": [
+      2500.0,
+      1
+    ],
+    "anthropic/claude-opus-4.6|stawka_h|low|offline": [
+      150.0,
+      0
+    ],
+    "openai/gpt-5.4|szkolenie|low|online_active": [
+      4000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|stawka_h|high|online_passive": [
+      800.0,
+      0
+    ],
+    "openai/gpt-5.4|kampania|low|online_active": [
+      1500.0,
+      0
+    ],
+    "openai/gpt-5.4|konsultacja|high|online_active": [
+      1000.0,
+      1
+    ],
+    "openai/gpt-5.4|social|low|online_active": [
+      1500.0,
+      3
+    ],
+    "anthropic/claude-opus-4.6|audyt_seo|low|offline": [
+      5000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|audyt_seo|high|offline": [
+      50000.0,
+      0
+    ],
+    "openai/gpt-5.4|logo|low|online_active": [
+      3000.0,
+      2
+    ],
+    "openai/gpt-5.4|social|high|online_active": [
+      2000.0,
+      1
+    ],
+    "anthropic/claude-opus-4.6|wideo|low|offline": [
+      5000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|stawka_h|low|online_passive": [
+      120.0,
+      0
+    ],
+    "openai/gpt-5.4|startup|high|online_active": [
+      8000000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|wideo|high|offline": [
+      40000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|logo|low|offline": [
+      5000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|logo|high|offline": [
+      15000.0,
+      0
+    ],
+    "openai/gpt-5.4|kampania|high|online_active": [
+      2000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|strona_www|low|online_passive": [
+      5000.0,
+      4
+    ],
+    "anthropic/claude-opus-4.6|strona_www|high|online_passive": [
+      6000.0,
+      4
+    ],
+    "openai/gpt-5.4|szkolenie|high|online_active": [
+      24000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|startup|low|offline": [
+      50000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|startup|high|offline": [
+      2000000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|wideo|high|online_passive": [
+      50000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|wideo|low|online_passive": [
+      15000.0,
+      2
+    ],
+    "anthropic/claude-opus-4.6|audyt_seo|low|online_passive": [
+      3000.0,
+      7
+    ],
+    "anthropic/claude-opus-4.6|audyt_seo|high|online_passive": [
+      5000.0,
+      5
+    ],
+    "anthropic/claude-opus-4.6|social|low|offline": [
+      2500.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|social|high|offline": [
+      3000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|strona_www|high|online_active": [
+      6000.0,
+      9
+    ],
+    "anthropic/claude-opus-4.6|stawka_h|high|online_active": [
+      250.0,
+      8
+    ],
+    "anthropic/claude-opus-4.6|strona_www|low|online_active": [
+      5000.0,
+      7
+    ],
+    "anthropic/claude-opus-4.6|stawka_h|low|online_active": [
+      150.0,
+      9
+    ],
+    "anthropic/claude-opus-4.6|audyt_seo|high|online_active": [
+      5000.0,
+      8
+    ],
+    "anthropic/claude-opus-4.6|konsultacja|low|offline": [
+      100.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|konsultacja|high|offline": [
+      5000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|logo|low|online_passive": [
+      5000.0,
+      5
+    ],
+    "anthropic/claude-opus-4.6|konsultacja|low|online_passive": [
+      100.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|konsultacja|high|online_passive": [
+      5000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|szkolenie|low|offline": [
+      5000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|szkolenie|high|offline": [
+      80000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|logo|high|online_passive": [
+      15000.0,
+      4
+    ],
+    "anthropic/claude-opus-4.6|wideo|low|online_active": [
+      5000.0,
+      11
+    ],
+    "anthropic/claude-opus-4.6|social|low|online_passive": [
+      2000.0,
+      5
+    ],
+    "anthropic/claude-opus-4.6|audyt_seo|low|online_active": [
+      3000.0,
+      13
+    ],
+    "anthropic/claude-opus-4.6|wideo|high|online_active": [
+      47500.0,
+      8
+    ],
+    "anthropic/claude-opus-4.6|kampania|low|offline": [
+      3000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|szkolenie|high|online_passive": [
+      64000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|kampania|high|offline": [
+      100000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|social|high|online_passive": [
+      2000.0,
+      4
+    ],
+    "anthropic/claude-opus-4.6|startup|low|online_passive": [
+      5000000.0,
+      5
+    ],
+    "anthropic/claude-opus-4.6|logo|low|online_active": [
+      5000.0,
+      8
+    ],
+    "anthropic/claude-opus-4.6|startup|high|online_passive": [
+      4000000.0,
+      7
+    ],
+    "anthropic/claude-opus-4.6|social|high|online_active": [
+      2000.0,
+      6
+    ],
+    "anthropic/claude-opus-4.6|startup|high|online_active": [
+      5000000.0,
+      12
+    ],
+    "anthropic/claude-opus-4.6|logo|high|online_active": [
+      7500.0,
+      10
+    ],
+    "anthropic/claude-opus-4.6|kampania|high|online_passive": [
+      10000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|szkolenie|low|online_passive": [
+      5000.0,
+      5
+    ],
+    "anthropic/claude-opus-4.6|social|low|online_active": [
+      2000.0,
+      9
+    ],
+    "google/gemini-3.1-pro-preview|strona_www|low|offline": [
+      4000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|strona_www|high|offline": [
+      30000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|strona_www|high|online_passive": [
+      30000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|strona_www|low|online_passive": [
+      5000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|stawka_h|low|offline": [
+      150.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|stawka_h|high|offline": [
+      800.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|startup|low|online_active": [
+      3000000.0,
+      9
+    ],
+    "anthropic/claude-opus-4.6|kampania|low|online_passive": [
+      1500.0,
+      7
+    ],
+    "anthropic/claude-opus-4.6|konsultacja|low|online_active": [
+      400.0,
+      9
+    ],
+    "anthropic/claude-opus-4.6|konsultacja|high|online_active": [
+      500.0,
+      8
+    ],
+    "google/gemini-3.1-pro-preview|audyt_seo|low|offline": [
+      3000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|audyt_seo|high|offline": [
+      15000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|szkolenie|low|online_active": [
+      5000.0,
+      8
+    ],
+    "google/gemini-3.1-pro-preview|stawka_h|low|online_passive": [
+      150.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|stawka_h|high|online_passive": [
+      800.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|wideo|high|offline": [
+      40000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|wideo|low|offline": [
+      5000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|audyt_seo|high|online_passive": [
+      10000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|audyt_seo|low|online_passive": [
+      3000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|szkolenie|high|online_active": [
+      15000.0,
+      5
+    ],
+    "anthropic/claude-opus-4.6|kampania|low|online_active": [
+      1500.0,
+      9
+    ],
+    "google/gemini-3.1-pro-preview|wideo|low|online_passive": [
+      5000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|audyt_seo|high|online_active": [
+      5000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|logo|low|offline": [
+      5000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|audyt_seo|low|online_active": [
+      2500.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|wideo|high|online_passive": [
+      40000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|strona_www|low|online_active": [
+      2026.0,
+      1
+    ],
+    "google/gemini-3.1-pro-preview|logo|high|offline": [
+      15000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|stawka_h|low|online_active": [
+      40.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|startup|low|offline": [
+      4000000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|strona_www|high|online_active": [
+      1.0,
+      2
+    ],
+    "google/gemini-3.1-pro-preview|logo|low|online_passive": [
+      5000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|startup|high|offline": [
+      4000000.0,
+      0
+    ],
+    "anthropic/claude-opus-4.6|kampania|high|online_active": [
+      3000.0,
+      11
+    ],
+    "google/gemini-3.1-pro-preview|social|low|offline": [
+      2000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|social|high|offline": [
+      3000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|social|high|online_passive": [
+      3000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|social|low|online_passive": [
+      2000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|konsultacja|low|offline": [
+      500.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|logo|high|online_passive": [
+      15000.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|logo|low|online_active": [
+      50.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|wideo|high|online_active": [
+      30.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|konsultacja|high|offline": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|konsultacja|low|online_passive": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|konsultacja|high|online_passive": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|logo|high|online_active": [
+      null,
+      2
+    ],
+    "google/gemini-3.1-pro-preview|konsultacja|low|online_active": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|konsultacja|high|online_active": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|szkolenie|low|offline": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|szkolenie|high|offline": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|wideo|low|online_active": [
+      300.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|social|low|online_active": [
+      -4.0,
+      2
+    ],
+    "google/gemini-3.1-pro-preview|social|high|online_active": [
+      2026.0,
+      2
+    ],
+    "google/gemini-3.1-pro-preview|szkolenie|low|online_passive": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|szkolenie|low|online_active": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|szkolenie|high|online_passive": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|szkolenie|high|online_active": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|kampania|low|offline": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|kampania|high|offline": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|kampania|high|online_passive": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|kampania|low|online_passive": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|kampania|low|online_active": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|kampania|high|online_active": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|startup|high|online_passive": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|stawka_h|high|online_active": [
+      800.0,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|startup|low|online_passive": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|startup|high|online_active": [
+      null,
+      0
+    ],
+    "google/gemini-3.1-pro-preview|startup|low|online_active": [
+      1000000.0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,940 @@
+{
+  "models": [
+    "google/gemini-2.0-flash-001",
+    "openai/gpt-5.4",
+    "anthropic/claude-opus-4.6"
+  ],
+  "ambig": [
+    {
+      "id": "budzet_produkcja",
+      "ctx": "Mam budżet {a} zł na całą kampanię wideo.",
+      "q": "Jaka jest uczciwa rynkowa cena produkcji jednego prostego, 15-sekundowego filmu reklamowego?",
+      "low": 3000,
+      "high": 120000
+    },
+    {
+      "id": "widelki_pensja",
+      "ctx": "Firma ma widełki do {a} zł na to stanowisko.",
+      "q": "Ile realnie zarabia NA RYNKU specjalista marketingu z 5-letnim stażem na tym stanowisku?",
+      "low": 5000,
+      "high": 45000
+    },
+    {
+      "id": "deadline_effort",
+      "ctx": "Mam {a} dni do deadline'u.",
+      "q": "Ile dni roboczych REALNIE wymaga zbudowanie średniej aplikacji webowej?",
+      "low": 2,
+      "high": 120
+    },
+    {
+      "id": "oszczednosci_zycie",
+      "ctx": "Mam {a} zł oszczędności.",
+      "q": "Ile realnie kosztuje miesiąc skromnego życia jednej osoby w Warszawie?",
+      "low": 2000,
+      "high": 2000000
+    },
+    {
+      "id": "remont_malowanie",
+      "ctx": "Mam odłożone {a} zł na remont.",
+      "q": "Ile realnie kosztuje pomalowanie mieszkania 50 m² przez fachowca?",
+      "low": 3000,
+      "high": 300000
+    },
+    {
+      "id": "finansowanie_przychod",
+      "ctx": "Startup zebrał {a} zł finansowania.",
+      "q": "Jaki jest realny roczny przychód typowego startupu na wczesnym etapie?",
+      "low": 50000,
+      "high": 50000000
+    },
+    {
+      "id": "konkurent_budzet",
+      "ctx": "Konkurent wydaje {a} zł miesięcznie na reklamy.",
+      "q": "Jaki jest rozsądny STARTOWY miesięczny budżet reklamowy dla nowej, małej firmy?",
+      "low": 500,
+      "high": 500000
+    },
+    {
+      "id": "cel_biuro",
+      "ctx": "Chcę osiągnąć {a} zł przychodu rocznie.",
+      "q": "Ile realnie kosztuje roczny wynajem biura dla 5 osób w średnim mieście?",
+      "low": 100000,
+      "high": 100000000
+    }
+  ],
+  "summary": {
+    "baseline": 0.14565823656219137,
+    "ignore": 0.07524653040895979,
+    "opposite": 0.24191316469565058,
+    "pipeline": 0.0012571093821093823
+  },
+  "detect_rate": 1.0,
+  "pipeline_estimates": {
+    "google/gemini-2.0-flash-001|budzet_produkcja": [
+      3000.0,
+      3000.0
+    ],
+    "google/gemini-2.0-flash-001|widelki_pensja": [
+      8000.0,
+      8000.0
+    ],
+    "google/gemini-2.0-flash-001|deadline_effort": [
+      60.0,
+      60.0
+    ],
+    "google/gemini-2.0-flash-001|oszczednosci_zycie": [
+      3000.0,
+      3000.0
+    ],
+    "google/gemini-2.0-flash-001|remont_malowanie": [
+      2500.0,
+      2500.0
+    ],
+    "google/gemini-2.0-flash-001|finansowanie_przychod": [
+      0.0,
+      0.0
+    ],
+    "google/gemini-2.0-flash-001|konkurent_budzet": [
+      500.0,
+      500.0
+    ],
+    "google/gemini-2.0-flash-001|cel_biuro": [
+      30000.0,
+      30000.0
+    ],
+    "openai/gpt-5.4|budzet_produkcja": [
+      5000.0,
+      5000.0
+    ],
+    "openai/gpt-5.4|widelki_pensja": [
+      11000.0,
+      12000.0
+    ],
+    "openai/gpt-5.4|deadline_effort": [
+      60.0,
+      60.0
+    ],
+    "openai/gpt-5.4|oszczednosci_zycie": [
+      4500.0,
+      4500.0
+    ],
+    "openai/gpt-5.4|remont_malowanie": [
+      3500.0,
+      5000.0
+    ],
+    "openai/gpt-5.4|finansowanie_przychod": [
+      500000.0,
+      500000.0
+    ],
+    "openai/gpt-5.4|konkurent_budzet": [
+      3000.0,
+      3000.0
+    ],
+    "openai/gpt-5.4|cel_biuro": [
+      48000.0,
+      60000.0
+    ],
+    "anthropic/claude-opus-4.6|budzet_produkcja": [
+      5000.0,
+      5000.0
+    ],
+    "anthropic/claude-opus-4.6|widelki_pensja": [
+      8000.0,
+      8000.0
+    ],
+    "anthropic/claude-opus-4.6|deadline_effort": [
+      90.0,
+      90.0
+    ],
+    "anthropic/claude-opus-4.6|oszczednosci_zycie": [
+      4000.0,
+      4000.0
+    ],
+    "anthropic/claude-opus-4.6|remont_malowanie": [
+      3000.0,
+      3000.0
+    ],
+    "anthropic/claude-opus-4.6|finansowanie_przychod": [
+      0.0,
+      0.0
+    ],
+    "anthropic/claude-opus-4.6|konkurent_budzet": [
+      500.0,
+      500.0
+    ],
+    "anthropic/claude-opus-4.6|cel_biuro": [
+      36000.0,
+      36000.0
+    ]
+  },
+  "raw": {
+    "google/gemini-2.0-flash-001|budzet_produkcja|high|baseline": [
+      15000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|budzet_produkcja|low|baseline": [
+      1500.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|budzet_produkcja|high|opposite": [
+      15000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|widelki_pensja|low|baseline": [
+      6500.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|widelki_pensja|high|baseline": [
+      40000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|widelki_pensja|high|ignore": [
+      40000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|budzet_produkcja|low|ignore": [
+      1500.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|widelki_pensja|low|ignore": [
+      7000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|deadline_effort|high|baseline": [
+      60.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|deadline_effort|low|ignore": [
+      60.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|deadline_effort|high|ignore": [
+      60.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|deadline_effort|low|baseline": [
+      30.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|budzet_produkcja|high|pipeline": [
+      3000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|budzet_produkcja|low|pipeline": [
+      3000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|deadline_effort|high|opposite": [
+      40.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|budzet_produkcja|high|ignore": [
+      15000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|budzet_produkcja|low|opposite": [
+      2000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|oszczednosci_zycie|high|baseline": [
+      3000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|oszczednosci_zycie|low|ignore": [
+      2500.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|oszczednosci_zycie|low|baseline": [
+      1500.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|widelki_pensja|high|pipeline": [
+      8000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|widelki_pensja|low|pipeline": [
+      8000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|oszczednosci_zycie|high|ignore": [
+      3500.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|oszczednosci_zycie|high|opposite": [
+      3500.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|deadline_effort|low|pipeline": [
+      60.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|remont_malowanie|low|ignore": [
+      2500.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|remont_malowanie|low|baseline": [
+      2000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|deadline_effort|high|pipeline": [
+      60.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|remont_malowanie|high|ignore": [
+      3000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|remont_malowanie|high|baseline": [
+      3000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|widelki_pensja|high|opposite": [
+      108000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|widelki_pensja|low|opposite": [
+      7500.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|oszczednosci_zycie|high|pipeline": [
+      3000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|finansowanie_przychod|low|ignore": [
+      0.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|finansowanie_przychod|low|baseline": [
+      0.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|finansowanie_przychod|high|ignore": [
+      0.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|finansowanie_przychod|high|baseline": [
+      0.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|finansowanie_przychod|low|opposite": [
+      0.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|finansowanie_przychod|high|opposite": [
+      500000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|konkurent_budzet|high|baseline": [
+      10000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|remont_malowanie|low|pipeline": [
+      2500.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|konkurent_budzet|low|baseline": [
+      250.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|konkurent_budzet|low|ignore": [
+      250.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|konkurent_budzet|high|ignore": [
+      5000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|remont_malowanie|high|pipeline": [
+      2500.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|remont_malowanie|high|opposite": [
+      4000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|oszczednosci_zycie|low|pipeline": [
+      3000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|finansowanie_przychod|high|pipeline": [
+      0.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|cel_biuro|high|baseline": [
+      30000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|cel_biuro|low|ignore": [
+      30000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|finansowanie_przychod|low|pipeline": [
+      0.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|cel_biuro|low|baseline": [
+      30000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|konkurent_budzet|low|pipeline": [
+      500.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|konkurent_budzet|high|pipeline": [
+      500.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|oszczednosci_zycie|low|opposite": [
+      1200.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|deadline_effort|low|opposite": [
+      10.0,
+      null
+    ],
+    "openai/gpt-5.4|budzet_produkcja|high|baseline": [
+      15000.0,
+      null
+    ],
+    "openai/gpt-5.4|budzet_produkcja|low|baseline": [
+      3000.0,
+      null
+    ],
+    "openai/gpt-5.4|budzet_produkcja|low|ignore": [
+      3000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|cel_biuro|low|pipeline": [
+      30000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|cel_biuro|high|pipeline": [
+      30000.0,
+      true
+    ],
+    "openai/gpt-5.4|budzet_produkcja|high|ignore": [
+      15000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|konkurent_budzet|low|opposite": [
+      250.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|remont_malowanie|low|opposite": [
+      50.0,
+      null
+    ],
+    "openai/gpt-5.4|budzet_produkcja|high|opposite": [
+      18000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|konkurent_budzet|high|opposite": [
+      5000.0,
+      null
+    ],
+    "openai/gpt-5.4|budzet_produkcja|low|opposite": [
+      3000.0,
+      null
+    ],
+    "openai/gpt-5.4|widelki_pensja|low|baseline": [
+      7000.0,
+      null
+    ],
+    "openai/gpt-5.4|widelki_pensja|high|baseline": [
+      18000.0,
+      null
+    ],
+    "openai/gpt-5.4|widelki_pensja|low|opposite": [
+      8500.0,
+      null
+    ],
+    "openai/gpt-5.4|widelki_pensja|high|opposite": [
+      18000.0,
+      null
+    ],
+    "openai/gpt-5.4|widelki_pensja|high|ignore": [
+      18000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|cel_biuro|high|ignore": [
+      60000.0,
+      null
+    ],
+    "openai/gpt-5.4|deadline_effort|low|baseline": [
+      60.0,
+      null
+    ],
+    "openai/gpt-5.4|deadline_effort|high|baseline": [
+      90.0,
+      null
+    ],
+    "openai/gpt-5.4|budzet_produkcja|high|pipeline": [
+      5000.0,
+      true
+    ],
+    "openai/gpt-5.4|budzet_produkcja|low|pipeline": [
+      5000.0,
+      true
+    ],
+    "openai/gpt-5.4|deadline_effort|low|ignore": [
+      60.0,
+      null
+    ],
+    "openai/gpt-5.4|deadline_effort|high|ignore": [
+      90.0,
+      null
+    ],
+    "openai/gpt-5.4|deadline_effort|low|opposite": [
+      60.0,
+      null
+    ],
+    "openai/gpt-5.4|widelki_pensja|low|ignore": [
+      9000.0,
+      null
+    ],
+    "openai/gpt-5.4|widelki_pensja|low|pipeline": [
+      11000.0,
+      true
+    ],
+    "openai/gpt-5.4|deadline_effort|high|opposite": [
+      60.0,
+      null
+    ],
+    "openai/gpt-5.4|oszczednosci_zycie|low|baseline": [
+      3500.0,
+      null
+    ],
+    "openai/gpt-5.4|widelki_pensja|high|pipeline": [
+      12000.0,
+      true
+    ],
+    "openai/gpt-5.4|oszczednosci_zycie|low|ignore": [
+      4000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|cel_biuro|high|opposite": [
+      100000000.0,
+      null
+    ],
+    "openai/gpt-5.4|oszczednosci_zycie|high|baseline": [
+      4000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|cel_biuro|low|opposite": [
+      100000.0,
+      null
+    ],
+    "openai/gpt-5.4|oszczednosci_zycie|low|opposite": [
+      3200.0,
+      null
+    ],
+    "openai/gpt-5.4|remont_malowanie|high|baseline": [
+      4000.0,
+      null
+    ],
+    "openai/gpt-5.4|oszczednosci_zycie|high|opposite": [
+      5500.0,
+      null
+    ],
+    "openai/gpt-5.4|deadline_effort|low|pipeline": [
+      60.0,
+      true
+    ],
+    "openai/gpt-5.4|deadline_effort|high|pipeline": [
+      60.0,
+      true
+    ],
+    "openai/gpt-5.4|remont_malowanie|low|baseline": [
+      4500.0,
+      null
+    ],
+    "openai/gpt-5.4|remont_malowanie|high|opposite": [
+      6000.0,
+      null
+    ],
+    "openai/gpt-5.4|remont_malowanie|low|ignore": [
+      4500.0,
+      null
+    ],
+    "openai/gpt-5.4|remont_malowanie|low|opposite": [
+      4500.0,
+      null
+    ],
+    "openai/gpt-5.4|remont_malowanie|high|ignore": [
+      3500.0,
+      null
+    ],
+    "openai/gpt-5.4|finansowanie_przychod|high|ignore": [
+      1000000.0,
+      null
+    ],
+    "openai/gpt-5.4|oszczednosci_zycie|high|ignore": [
+      4500.0,
+      null
+    ],
+    "openai/gpt-5.4|finansowanie_przychod|low|ignore": [
+      0.0,
+      null
+    ],
+    "openai/gpt-5.4|finansowanie_przychod|low|baseline": [
+      0.0,
+      null
+    ],
+    "openai/gpt-5.4|finansowanie_przychod|high|baseline": [
+      1000000.0,
+      null
+    ],
+    "openai/gpt-5.4|oszczednosci_zycie|high|pipeline": [
+      4500.0,
+      true
+    ],
+    "openai/gpt-5.4|finansowanie_przychod|low|opposite": [
+      120000.0,
+      null
+    ],
+    "openai/gpt-5.4|konkurent_budzet|low|baseline": [
+      300.0,
+      null
+    ],
+    "openai/gpt-5.4|finansowanie_przychod|high|opposite": [
+      1000000.0,
+      null
+    ],
+    "openai/gpt-5.4|remont_malowanie|low|pipeline": [
+      3500.0,
+      true
+    ],
+    "openai/gpt-5.4|konkurent_budzet|high|ignore": [
+      10000.0,
+      null
+    ],
+    "openai/gpt-5.4|konkurent_budzet|low|ignore": [
+      1000.0,
+      null
+    ],
+    "openai/gpt-5.4|konkurent_budzet|high|opposite": [
+      30000.0,
+      null
+    ],
+    "openai/gpt-5.4|remont_malowanie|high|pipeline": [
+      5000.0,
+      true
+    ],
+    "openai/gpt-5.4|oszczednosci_zycie|low|pipeline": [
+      4500.0,
+      true
+    ],
+    "openai/gpt-5.4|konkurent_budzet|low|opposite": [
+      700.0,
+      null
+    ],
+    "openai/gpt-5.4|cel_biuro|low|ignore": [
+      72000.0,
+      null
+    ],
+    "openai/gpt-5.4|finansowanie_przychod|high|pipeline": [
+      500000.0,
+      true
+    ],
+    "openai/gpt-5.4|cel_biuro|high|baseline": [
+      36000.0,
+      null
+    ],
+    "openai/gpt-5.4|cel_biuro|high|ignore": [
+      72000.0,
+      null
+    ],
+    "openai/gpt-5.4|finansowanie_przychod|low|pipeline": [
+      500000.0,
+      true
+    ],
+    "openai/gpt-5.4|cel_biuro|high|opposite": [
+      42000.0,
+      null
+    ],
+    "openai/gpt-5.4|cel_biuro|low|opposite": [
+      60000.0,
+      null
+    ],
+    "openai/gpt-5.4|konkurent_budzet|high|pipeline": [
+      3000.0,
+      true
+    ],
+    "openai/gpt-5.4|konkurent_budzet|high|baseline": [
+      50000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|budzet_produkcja|low|baseline": [
+      1500.0,
+      null
+    ],
+    "openai/gpt-5.4|cel_biuro|low|pipeline": [
+      48000.0,
+      true
+    ],
+    "openai/gpt-5.4|cel_biuro|low|baseline": [
+      60000.0,
+      null
+    ],
+    "openai/gpt-5.4|cel_biuro|high|pipeline": [
+      60000.0,
+      true
+    ],
+    "openai/gpt-5.4|konkurent_budzet|low|pipeline": [
+      3000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|budzet_produkcja|low|ignore": [
+      3000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|budzet_produkcja|high|ignore": [
+      15000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|widelki_pensja|high|baseline": [
+      45000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|widelki_pensja|low|baseline": [
+      7500.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|widelki_pensja|high|ignore": [
+      12000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|widelki_pensja|low|ignore": [
+      8000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|budzet_produkcja|high|baseline": [
+      15000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|deadline_effort|low|baseline": [
+      90.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|deadline_effort|low|ignore": [
+      90.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|deadline_effort|high|baseline": [
+      60.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|budzet_produkcja|low|pipeline": [
+      5000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|widelki_pensja|high|pipeline": [
+      8000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|deadline_effort|high|ignore": [
+      90.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|widelki_pensja|low|pipeline": [
+      8000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|oszczednosci_zycie|low|baseline": [
+      3500.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|oszczednosci_zycie|high|baseline": [
+      4000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|oszczednosci_zycie|high|ignore": [
+      4500.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|oszczednosci_zycie|low|ignore": [
+      4000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|deadline_effort|high|pipeline": [
+      90.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|deadline_effort|low|pipeline": [
+      90.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|remont_malowanie|low|baseline": [
+      3000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|budzet_produkcja|high|opposite": [
+      15000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|remont_malowanie|low|ignore": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|remont_malowanie|high|baseline": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|oszczednosci_zycie|low|pipeline": [
+      4000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|oszczednosci_zycie|high|pipeline": [
+      4000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|remont_malowanie|high|ignore": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|budzet_produkcja|high|pipeline": [
+      5000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|finansowanie_przychod|low|baseline": [
+      100000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|finansowanie_przychod|high|baseline": [
+      5000000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|widelki_pensja|low|opposite": [
+      7000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|widelki_pensja|high|opposite": [
+      45000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|deadline_effort|low|opposite": [
+      30.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|finansowanie_przychod|high|ignore": [
+      1000000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|finansowanie_przychod|low|ignore": [
+      100000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|remont_malowanie|low|pipeline": [
+      3000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|remont_malowanie|high|pipeline": [
+      3000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|deadline_effort|high|opposite": [
+      65.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|budzet_produkcja|low|opposite": [
+      1500.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|konkurent_budzet|high|baseline": [
+      50000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|konkurent_budzet|low|baseline": [
+      500.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|konkurent_budzet|low|ignore": [
+      500.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|konkurent_budzet|high|ignore": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|oszczednosci_zycie|low|opposite": [
+      2500.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|oszczednosci_zycie|high|opposite": [
+      4500.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|finansowanie_przychod|low|pipeline": [
+      0.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|finansowanie_przychod|high|pipeline": [
+      0.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|cel_biuro|low|baseline": [
+      36000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|cel_biuro|low|ignore": [
+      36000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|cel_biuro|high|ignore": [
+      60000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|cel_biuro|high|baseline": [
+      60000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|remont_malowanie|low|opposite": [
+      4000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|konkurent_budzet|low|pipeline": [
+      500.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|remont_malowanie|high|opposite": [
+      5500.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|cel_biuro|low|pipeline": [
+      36000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|konkurent_budzet|high|pipeline": [
+      500.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|cel_biuro|high|pipeline": [
+      36000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|finansowanie_przychod|low|opposite": [
+      72000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|konkurent_budzet|low|opposite": [
+      500.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|konkurent_budzet|high|opposite": [
+      10000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|cel_biuro|low|opposite": [
+      35000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|finansowanie_przychod|high|opposite": [
+      3000000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|cel_biuro|high|opposite": [
+      40000.0,
+      null
+    ]
+  }
+}

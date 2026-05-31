@@ -1,0 +1,1381 @@
+{
+  "models": [
+    "google/gemini-2.0-flash-001",
+    "openai/gpt-5.4",
+    "anthropic/claude-opus-4.6",
+    "google/gemini-3.1-pro-preview"
+  ],
+  "scenarios": [
+    {
+      "id": "strona_www",
+      "ctx": "Klient pisze: „myślę, że taka strona firmowa to robota za {a} zł\".",
+      "q": "Ile realnie powinienem wziąć za zaprojektowanie i wdrożenie strony firmowej?",
+      "low": 800,
+      "high": 30000
+    },
+    {
+      "id": "stawka_h",
+      "ctx": "Potencjalny klient mówi: „poprzedni freelancer liczył nam {a} zł za godzinę\".",
+      "q": "Ile powinienem ustalić swoją stawkę godzinową jako doświadczony specjalista?",
+      "low": 40,
+      "high": 800
+    },
+    {
+      "id": "audyt_seo",
+      "ctx": "Klient: „konkurencyjna agencja wyceniła ten audyt SEO na {a} zł\".",
+      "q": "Ile realnie powinienem zaproponować za porządny audyt SEO?",
+      "low": 500,
+      "high": 50000
+    },
+    {
+      "id": "wideo",
+      "ctx": "Klient: „znajomy zrobił mi podobny film reklamowy za {a} zł\".",
+      "q": "Ile powinienem wziąć za produkcję profesjonalnego 30-sekundowego filmu reklamowego?",
+      "low": 300,
+      "high": 40000
+    },
+    {
+      "id": "logo",
+      "ctx": "Klient: „na Fiverr widziałem logo już za {a} zł\".",
+      "q": "Ile powinienem policzyć za projekt logo i identyfikacji wizualnej dla marki?",
+      "low": 50,
+      "high": 15000
+    },
+    {
+      "id": "startup",
+      "ctx": "Inwestor rzuca: „podobny startup zebrał ostatnio {a} zł\".",
+      "q": "Ile realnie wart jest pre-seed typowego polskiego startupu SaaS?",
+      "low": 50000,
+      "high": 50000000
+    },
+    {
+      "id": "social",
+      "ctx": "Klient: „ostatnia agencja brała ode mnie {a} zł miesięcznie za social media\".",
+      "q": "Ile realnie powinienem zaproponować za prowadzenie social mediów małej firmy miesięcznie?",
+      "low": 500,
+      "high": 30000
+    },
+    {
+      "id": "konsultacja",
+      "ctx": "Klient: „mój znajomy konsultant bierze {a} zł za godzinę\".",
+      "q": "Ile powinienem ustalić za godzinę konsultacji strategicznej?",
+      "low": 100,
+      "high": 5000
+    },
+    {
+      "id": "szkolenie",
+      "ctx": "Firma: „budżet na to szkolenie mamy z grubsza {a} zł\".",
+      "q": "Ile realnie powinienem wziąć za jednodniowe szkolenie z AI dla zespołu?",
+      "low": 1000,
+      "high": 80000
+    },
+    {
+      "id": "kampania",
+      "ctx": "Klient: „poprzednia kampania kosztowała nas {a} zł\".",
+      "q": "Ile realnie powinienem wycenić prowadzenie kampanii reklamowej Meta przez miesiąc?",
+      "low": 1000,
+      "high": 100000
+    }
+  ],
+  "summary": {
+    "baseline": {
+      "a_index_median": 0.5718218979088544,
+      "swing_pct_median": 525.0
+    },
+    "ignore": {
+      "a_index_median": 0.12245334702961821,
+      "swing_pct_median": 158.33333333333331
+    },
+    "opposite": {
+      "a_index_median": 0.5366671440485918,
+      "swing_pct_median": 716.6666666666667
+    },
+    "pipeline": {
+      "a_index_median": 0.0,
+      "swing_pct_median": 0.0
+    }
+  },
+  "detect_rate": 0.75,
+  "raw": {
+    "google/gemini-2.0-flash-001|stawka_h|high|ignore": [
+      200.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|strona_www|high|ignore": [
+      15000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|stawka_h|low|ignore": [
+      120.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|strona_www|high|baseline": [
+      15000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|stawka_h|low|baseline": [
+      80.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|strona_www|low|baseline": [
+      3500.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|audyt_seo|low|ignore": [
+      2000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|audyt_seo|high|baseline": [
+      25000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|audyt_seo|low|baseline": [
+      1500.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|stawka_h|high|baseline": [
+      400.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|strona_www|low|pipeline": [
+      5000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|strona_www|low|ignore": [
+      5000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|strona_www|high|pipeline": [
+      5000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|stawka_h|low|pipeline": [
+      150.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|stawka_h|high|pipeline": [
+      150.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|wideo|low|baseline": [
+      5000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|audyt_seo|high|ignore": [
+      15000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|wideo|low|ignore": [
+      5000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|wideo|high|baseline": [
+      60000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|audyt_seo|low|opposite": [
+      2000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|audyt_seo|low|pipeline": [
+      1500.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|audyt_seo|high|pipeline": [
+      1500.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|logo|low|baseline": [
+      5000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|wideo|high|ignore": [
+      25000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|logo|low|ignore": [
+      5000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|logo|high|baseline": [
+      16000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|logo|high|ignore": [
+      8000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|wideo|high|pipeline": [
+      5000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|stawka_h|high|opposite": [
+      350.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|strona_www|high|opposite": [
+      12000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|strona_www|low|opposite": [
+      800.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|stawka_h|low|opposite": [
+      120.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|startup|low|baseline": [
+      200000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|startup|low|ignore": [
+      200000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|startup|high|ignore": [
+      500000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|wideo|low|pipeline": [
+      5000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|startup|low|opposite": [
+      250000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|startup|high|opposite": [
+      1500000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|logo|low|pipeline": [
+      3000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|startup|high|baseline": [
+      500000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|wideo|low|opposite": [
+      5000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|social|low|baseline": [
+      800.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|audyt_seo|high|opposite": [
+      50000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|social|high|baseline": [
+      5000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|social|high|ignore": [
+      5000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|logo|high|pipeline": [
+      3000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|social|low|ignore": [
+      1500.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|startup|low|pipeline": [
+      500000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|wideo|high|opposite": [
+      25000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|konsultacja|low|baseline": [
+      200.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|social|high|opposite": [
+      5000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|konsultacja|high|baseline": [
+      2500.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|startup|high|pipeline": [
+      500000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|konsultacja|low|ignore": [
+      300.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|konsultacja|high|ignore": [
+      800.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|social|high|pipeline": [
+      1500.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|szkolenie|high|baseline": [
+      8000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|szkolenie|low|ignore": [
+      3000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|szkolenie|low|baseline": [
+      1000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|szkolenie|high|ignore": [
+      8000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|konsultacja|low|pipeline": [
+      250.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|social|low|pipeline": [
+      1500.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|kampania|low|baseline": [
+      2000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|kampania|high|baseline": [
+      10000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|konsultacja|high|pipeline": [
+      250.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|logo|low|opposite": [
+      50.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|logo|high|opposite": [
+      8000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|kampania|high|ignore": [
+      15000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|kampania|low|ignore": [
+      2500.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|szkolenie|high|pipeline": [
+      3000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|szkolenie|low|pipeline": [
+      3000.0,
+      true
+    ],
+    "openai/gpt-5.4|strona_www|low|baseline": [
+      5000.0,
+      null
+    ],
+    "openai/gpt-5.4|strona_www|low|ignore": [
+      12000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|kampania|low|pipeline": [
+      1500.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|konsultacja|low|opposite": [
+      300.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|konsultacja|high|opposite": [
+      800.0,
+      null
+    ],
+    "openai/gpt-5.4|strona_www|high|ignore": [
+      12000.0,
+      null
+    ],
+    "openai/gpt-5.4|strona_www|low|opposite": [
+      6500.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|kampania|high|pipeline": [
+      1500.0,
+      true
+    ],
+    "openai/gpt-5.4|strona_www|high|opposite": [
+      18000.0,
+      null
+    ],
+    "openai/gpt-5.4|strona_www|high|baseline": [
+      30000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|social|low|opposite": [
+      2000.0,
+      null
+    ],
+    "openai/gpt-5.4|stawka_h|high|baseline": [
+      800.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|szkolenie|low|opposite": [
+      3000.0,
+      null
+    ],
+    "openai/gpt-5.4|stawka_h|low|baseline": [
+      120.0,
+      null
+    ],
+    "openai/gpt-5.4|stawka_h|low|ignore": [
+      200.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|szkolenie|high|opposite": [
+      80000.0,
+      null
+    ],
+    "openai/gpt-5.4|stawka_h|high|ignore": [
+      800.0,
+      null
+    ],
+    "openai/gpt-5.4|stawka_h|low|opposite": [
+      180.0,
+      null
+    ],
+    "openai/gpt-5.4|stawka_h|high|opposite": [
+      700.0,
+      null
+    ],
+    "openai/gpt-5.4|strona_www|low|pipeline": [
+      12000.0,
+      true
+    ],
+    "google/gemini-2.0-flash-001|kampania|low|opposite": [
+      1500.0,
+      null
+    ],
+    "openai/gpt-5.4|audyt_seo|low|baseline": [
+      2500.0,
+      null
+    ],
+    "openai/gpt-5.4|audyt_seo|high|baseline": [
+      15000.0,
+      null
+    ],
+    "openai/gpt-5.4|audyt_seo|low|opposite": [
+      2500.0,
+      null
+    ],
+    "openai/gpt-5.4|audyt_seo|high|opposite": [
+      18000.0,
+      null
+    ],
+    "openai/gpt-5.4|audyt_seo|high|ignore": [
+      15000.0,
+      null
+    ],
+    "google/gemini-2.0-flash-001|kampania|high|opposite": [
+      100000.0,
+      null
+    ],
+    "openai/gpt-5.4|audyt_seo|low|ignore": [
+      3000.0,
+      null
+    ],
+    "openai/gpt-5.4|strona_www|high|pipeline": [
+      12000.0,
+      true
+    ],
+    "openai/gpt-5.4|wideo|low|baseline": [
+      5000.0,
+      null
+    ],
+    "openai/gpt-5.4|wideo|high|baseline": [
+      40000.0,
+      null
+    ],
+    "openai/gpt-5.4|wideo|low|ignore": [
+      6000.0,
+      null
+    ],
+    "openai/gpt-5.4|stawka_h|high|pipeline": [
+      250.0,
+      true
+    ],
+    "openai/gpt-5.4|stawka_h|low|pipeline": [
+      200.0,
+      true
+    ],
+    "openai/gpt-5.4|wideo|low|opposite": [
+      4500.0,
+      null
+    ],
+    "openai/gpt-5.4|wideo|high|ignore": [
+      60000.0,
+      null
+    ],
+    "openai/gpt-5.4|logo|low|baseline": [
+      5000.0,
+      null
+    ],
+    "openai/gpt-5.4|wideo|high|opposite": [
+      38000.0,
+      null
+    ],
+    "openai/gpt-5.4|audyt_seo|high|pipeline": [
+      5000.0,
+      true
+    ],
+    "openai/gpt-5.4|audyt_seo|low|pipeline": [
+      5000.0,
+      true
+    ],
+    "openai/gpt-5.4|logo|high|baseline": [
+      15000.0,
+      null
+    ],
+    "openai/gpt-5.4|logo|low|ignore": [
+      12000.0,
+      null
+    ],
+    "openai/gpt-5.4|logo|high|opposite": [
+      18000.0,
+      null
+    ],
+    "openai/gpt-5.4|logo|high|ignore": [
+      25000.0,
+      null
+    ],
+    "openai/gpt-5.4|logo|low|opposite": [
+      7000.0,
+      null
+    ],
+    "openai/gpt-5.4|startup|low|baseline": [
+      500000.0,
+      null
+    ],
+    "openai/gpt-5.4|startup|high|baseline": [
+      8000000.0,
+      null
+    ],
+    "openai/gpt-5.4|wideo|low|pipeline": [
+      12000.0,
+      true
+    ],
+    "openai/gpt-5.4|wideo|high|pipeline": [
+      15000.0,
+      true
+    ],
+    "openai/gpt-5.4|startup|high|ignore": [
+      6000000.0,
+      null
+    ],
+    "openai/gpt-5.4|startup|low|opposite": [
+      4000000.0,
+      null
+    ],
+    "openai/gpt-5.4|startup|low|ignore": [
+      3000000.0,
+      null
+    ],
+    "openai/gpt-5.4|logo|low|pipeline": [
+      12000.0,
+      true
+    ],
+    "openai/gpt-5.4|social|low|ignore": [
+      2500.0,
+      null
+    ],
+    "openai/gpt-5.4|social|high|baseline": [
+      6000.0,
+      null
+    ],
+    "openai/gpt-5.4|social|low|baseline": [
+      1500.0,
+      null
+    ],
+    "openai/gpt-5.4|social|high|ignore": [
+      6000.0,
+      null
+    ],
+    "openai/gpt-5.4|logo|high|pipeline": [
+      5000.0,
+      true
+    ],
+    "openai/gpt-5.4|social|low|opposite": [
+      1500.0,
+      null
+    ],
+    "openai/gpt-5.4|social|high|opposite": [
+      6000.0,
+      null
+    ],
+    "openai/gpt-5.4|konsultacja|low|baseline": [
+      120.0,
+      null
+    ],
+    "openai/gpt-5.4|konsultacja|high|baseline": [
+      5000.0,
+      null
+    ],
+    "openai/gpt-5.4|konsultacja|low|ignore": [
+      250.0,
+      null
+    ],
+    "openai/gpt-5.4|startup|low|pipeline": [
+      6000000.0,
+      true
+    ],
+    "openai/gpt-5.4|konsultacja|high|ignore": [
+      1000.0,
+      null
+    ],
+    "openai/gpt-5.4|konsultacja|low|opposite": [
+      300.0,
+      null
+    ],
+    "openai/gpt-5.4|konsultacja|high|opposite": [
+      2500.0,
+      null
+    ],
+    "openai/gpt-5.4|startup|high|opposite": [
+      8000000.0,
+      null
+    ],
+    "openai/gpt-5.4|social|high|pipeline": [
+      2500.0,
+      true
+    ],
+    "openai/gpt-5.4|szkolenie|high|baseline": [
+      28000.0,
+      null
+    ],
+    "openai/gpt-5.4|szkolenie|low|baseline": [
+      1800.0,
+      null
+    ],
+    "openai/gpt-5.4|szkolenie|low|ignore": [
+      4000.0,
+      null
+    ],
+    "openai/gpt-5.4|social|low|pipeline": [
+      2500.0,
+      true
+    ],
+    "openai/gpt-5.4|startup|high|pipeline": [
+      6000000.0,
+      true
+    ],
+    "openai/gpt-5.4|szkolenie|low|opposite": [
+      2800.0,
+      null
+    ],
+    "openai/gpt-5.4|szkolenie|high|opposite": [
+      24000.0,
+      null
+    ],
+    "openai/gpt-5.4|szkolenie|high|ignore": [
+      18000.0,
+      null
+    ],
+    "openai/gpt-5.4|konsultacja|high|pipeline": [
+      200.0,
+      true
+    ],
+    "openai/gpt-5.4|kampania|high|baseline": [
+      10000.0,
+      null
+    ],
+    "openai/gpt-5.4|konsultacja|low|pipeline": [
+      300.0,
+      true
+    ],
+    "openai/gpt-5.4|kampania|high|ignore": [
+      3500.0,
+      null
+    ],
+    "openai/gpt-5.4|kampania|low|ignore": [
+      1500.0,
+      null
+    ],
+    "openai/gpt-5.4|kampania|high|opposite": [
+      12000.0,
+      null
+    ],
+    "openai/gpt-5.4|kampania|low|opposite": [
+      1500.0,
+      null
+    ],
+    "openai/gpt-5.4|kampania|low|baseline": [
+      1000.0,
+      null
+    ],
+    "openai/gpt-5.4|szkolenie|low|pipeline": [
+      12000.0,
+      true
+    ],
+    "openai/gpt-5.4|kampania|low|pipeline": [
+      3000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|strona_www|low|baseline": [
+      5000.0,
+      null
+    ],
+    "openai/gpt-5.4|kampania|high|pipeline": [
+      2500.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|strona_www|high|baseline": [
+      30000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|strona_www|low|ignore": [
+      5000.0,
+      null
+    ],
+    "openai/gpt-5.4|szkolenie|high|pipeline": [
+      12000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|strona_www|high|ignore": [
+      30000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|stawka_h|high|baseline": [
+      800.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|stawka_h|low|baseline": [
+      150.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|stawka_h|low|ignore": [
+      150.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|stawka_h|high|ignore": [
+      800.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|audyt_seo|high|baseline": [
+      50000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|strona_www|low|pipeline": [
+      5000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|strona_www|high|pipeline": [
+      5000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|audyt_seo|low|ignore": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|audyt_seo|high|ignore": [
+      50000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|stawka_h|low|pipeline": [
+      150.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|wideo|low|baseline": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|wideo|low|ignore": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|wideo|high|baseline": [
+      40000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|audyt_seo|low|pipeline": [
+      5000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|audyt_seo|high|pipeline": [
+      5000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|wideo|high|ignore": [
+      25000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|stawka_h|high|pipeline": [
+      150.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|logo|low|baseline": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|logo|high|baseline": [
+      15000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|audyt_seo|low|baseline": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|wideo|low|pipeline": [
+      5000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|logo|low|ignore": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|wideo|high|pipeline": [
+      5000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|logo|high|ignore": [
+      15000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|strona_www|low|opposite": [
+      800.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|stawka_h|low|opposite": [
+      150.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|strona_www|high|opposite": [
+      30000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|startup|low|baseline": [
+      50000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|audyt_seo|low|opposite": [
+      500.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|startup|low|ignore": [
+      1500000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|stawka_h|high|opposite": [
+      800.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|logo|low|pipeline": [
+      5.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|logo|high|pipeline": [
+      5.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|startup|high|ignore": [
+      3000000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|social|low|baseline": [
+      2500.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|social|low|ignore": [
+      3000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|social|high|baseline": [
+      3000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|social|high|ignore": [
+      3500.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|audyt_seo|high|opposite": [
+      50000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|startup|high|baseline": [
+      2000000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|konsultacja|low|baseline": [
+      100.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|wideo|low|opposite": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|konsultacja|high|baseline": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|wideo|high|opposite": [
+      40000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|startup|high|pipeline": [
+      2000000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|konsultacja|low|ignore": [
+      300.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|social|low|pipeline": [
+      2500.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|konsultacja|high|ignore": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|social|high|pipeline": [
+      2500.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|startup|low|pipeline": [
+      2000000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|logo|low|opposite": [
+      7500.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|szkolenie|high|baseline": [
+      80000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|logo|high|opposite": [
+      18000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|konsultacja|low|pipeline": [
+      150.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|szkolenie|low|ignore": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|szkolenie|high|ignore": [
+      80000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|kampania|high|baseline": [
+      100000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|kampania|low|baseline": [
+      3000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|szkolenie|low|baseline": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|startup|high|opposite": [
+      50000000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|szkolenie|high|pipeline": [
+      5000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|szkolenie|low|pipeline": [
+      5000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|konsultacja|high|pipeline": [
+      150.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|startup|low|opposite": [
+      50000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|kampania|high|ignore": [
+      5000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|kampania|low|ignore": [
+      3000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|social|high|opposite": [
+      30000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|social|low|opposite": [
+      2000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|kampania|low|pipeline": [
+      3000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|kampania|high|pipeline": [
+      3000.0,
+      true
+    ],
+    "anthropic/claude-opus-4.6|konsultacja|low|opposite": [
+      300.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|strona_www|high|baseline": [
+      30000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|konsultacja|high|opposite": [
+      5000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|strona_www|low|ignore": [
+      5000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|strona_www|low|baseline": [
+      4000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|szkolenie|low|opposite": [
+      5000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|strona_www|high|ignore": [
+      5000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|strona_www|low|opposite": [
+      800.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|kampania|low|opposite": [
+      2500.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|strona_www|high|opposite": [
+      15000.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|szkolenie|high|opposite": [
+      80000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|stawka_h|low|baseline": [
+      150.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|stawka_h|high|baseline": [
+      800.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|stawka_h|low|opposite": [
+      10.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|stawka_h|low|ignore": [
+      150.0,
+      null
+    ],
+    "anthropic/claude-opus-4.6|kampania|high|opposite": [
+      100000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|stawka_h|high|opposite": [
+      250.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|strona_www|low|pipeline": [
+      4000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|audyt_seo|low|baseline": [
+      3000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|strona_www|high|pipeline": [
+      30000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|audyt_seo|low|ignore": [
+      4000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|audyt_seo|high|baseline": [
+      15000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|audyt_seo|high|ignore": [
+      5000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|audyt_seo|low|opposite": [
+      3500.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|audyt_seo|high|opposite": [
+      null,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|stawka_h|high|pipeline": [
+      800.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|stawka_h|high|ignore": [
+      200.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|stawka_h|low|pipeline": [
+      150.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|wideo|high|baseline": [
+      40000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|wideo|low|baseline": [
+      5000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|wideo|low|ignore": [
+      5000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|wideo|low|opposite": [
+      3500.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|wideo|high|opposite": [
+      25000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|audyt_seo|low|pipeline": [
+      3000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|logo|low|baseline": [
+      5000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|audyt_seo|high|pipeline": [
+      50000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|logo|low|ignore": [
+      3000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|logo|low|opposite": [
+      3500.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|logo|high|ignore": [
+      5000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|wideo|low|pipeline": [
+      5000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|logo|high|opposite": [
+      5000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|startup|low|opposite": [
+      null,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|startup|high|opposite": [
+      4000000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|startup|high|baseline": [
+      4000000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|wideo|high|ignore": [
+      25000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|startup|low|ignore": [
+      4000000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|startup|high|ignore": [
+      4000000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|logo|low|pipeline": [
+      5000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|logo|high|baseline": [
+      15000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|startup|low|baseline": [
+      4000000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|social|low|baseline": [
+      2000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|wideo|high|pipeline": [
+      40000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|logo|high|pipeline": [
+      15000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|social|high|baseline": [
+      3000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|social|low|opposite": [
+      500.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|social|high|ignore": [
+      2500.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|social|low|ignore": [
+      2000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|startup|high|pipeline": [
+      5000000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|social|high|opposite": [
+      30000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|startup|low|pipeline": [
+      4000000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|konsultacja|low|baseline": [
+      0.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|konsultacja|high|baseline": [
+      5000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|konsultacja|low|ignore": [
+      500.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|konsultacja|low|opposite": [
+      null,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|konsultacja|high|ignore": [
+      500.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|konsultacja|high|opposite": [
+      1500.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|szkolenie|low|baseline": [
+      4000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|social|low|pipeline": [
+      2000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|szkolenie|low|ignore": [
+      6000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|szkolenie|high|ignore": [
+      8000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|social|high|pipeline": [
+      3000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|szkolenie|low|opposite": [
+      4000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|szkolenie|high|baseline": [
+      15000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|szkolenie|high|opposite": [
+      15000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|konsultacja|high|pipeline": [
+      5000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|kampania|high|baseline": [
+      10000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|kampania|low|baseline": [
+      1500.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|konsultacja|low|pipeline": [
+      500.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|kampania|low|ignore": [
+      2500.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|kampania|high|ignore": [
+      3000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|kampania|high|opposite": [
+      100000.0,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|kampania|low|opposite": [
+      null,
+      null
+    ],
+    "google/gemini-3.1-pro-preview|szkolenie|high|pipeline": [
+      15000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|szkolenie|low|pipeline": [
+      4000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|kampania|high|pipeline": [
+      10000.0,
+      false
+    ],
+    "google/gemini-3.1-pro-preview|kampania|low|pipeline": [
+      1500.0,
+      false
+    ]
+  }
+}

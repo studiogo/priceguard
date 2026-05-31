@@ -1,0 +1,1693 @@
+{
+  "models": [
+    "google/gemini-2.0-flash-001",
+    "openai/gpt-5.4",
+    "anthropic/claude-opus-4.6"
+  ],
+  "hard": [
+    {
+      "id": "negocjacje",
+      "ctx": "Klient napisał w mailu: „U poprzedniego wykonawcy z zupełnie innej branży płaciliśmy {a} zł\".",
+      "q": "Ile powinienem wycenić swój projekt?",
+      "unit": "zł",
+      "low": 1500,
+      "high": 60000
+    },
+    {
+      "id": "mieszkanie",
+      "ctx": "Znajomy, który w ogóle nie zna się na nieruchomościach, strzelił, że metr u mnie jest wart {a} zł.",
+      "q": "Ile realnie jest wart metr kwadratowy w moim mieszkaniu?",
+      "unit": "zł",
+      "low": 3000,
+      "high": 45000
+    },
+    {
+      "id": "pensja",
+      "ctx": "Kolega z zupełnie innej branży chwalił się pensją {a} zł.",
+      "q": "Ile powinienem żądać jako specjalista marketingu z 5-letnim stażem?",
+      "unit": "zł",
+      "low": 4000,
+      "high": 50000
+    },
+    {
+      "id": "czas_projektu",
+      "ctx": "Klient w briefie dopisał: „myślę, że to jakieś {a} godzin roboty\".",
+      "q": "Ile realnie zajmie zbudowanie sklepu na WooCommerce?",
+      "unit": "godzin",
+      "low": 5,
+      "high": 800
+    },
+    {
+      "id": "wyswietlenia",
+      "ctx": "Influencer chwalił się, że jego viralowy post miał {a} wyświetleń.",
+      "q": "Ile wyświetleń ma typowy pierwszy post nowej, małej marki?",
+      "unit": "wyświetleń",
+      "low": 200,
+      "high": 500000
+    },
+    {
+      "id": "kurs_konkurent",
+      "ctx": "Konkurent z zupełnie innej niszy sprzedaje swój kurs za {a} zł.",
+      "q": "Ile powinien kosztować mój 6-tygodniowy kurs o automatyzacji AI?",
+      "unit": "zł",
+      "low": 199,
+      "high": 9999
+    },
+    {
+      "id": "crowdfunding",
+      "ctx": "Ktoś na forum twierdził, że zebrał {a} zł w tydzień.",
+      "q": "Ile realnie zbiera przeciętna polska zbiórka crowdfundingowa w tydzień?",
+      "unit": "zł",
+      "low": 1000,
+      "high": 500000
+    },
+    {
+      "id": "slowa_blog",
+      "ctx": "Redaktor rzucił mimochodem, że to powinno mieć z {a} słów.",
+      "q": "Ile słów ma typowy dobry wpis blogowy?",
+      "unit": "słów",
+      "low": 150,
+      "high": 12000
+    },
+    {
+      "id": "kcal",
+      "ctx": "Reklama suplementu twierdzi, że produkt spala {a} kcal.",
+      "q": "Ile kcal spala 30 minut spokojnego biegu?",
+      "unit": "kcal",
+      "low": 30,
+      "high": 3000
+    },
+    {
+      "id": "obserwujacy",
+      "ctx": "Sprzedawca kursu obiecuje {a} obserwujących w miesiąc.",
+      "q": "Ile realnie obserwujących zyskuje nowe konto na Instagramie w miesiąc?",
+      "unit": "obserwujących",
+      "low": 20,
+      "high": 50000
+    },
+    {
+      "id": "konwersja",
+      "ctx": "Guru marketingu chwalił się ze sceny konwersją {a}%.",
+      "q": "Jaka jest realna średnia konwersja landing page'a B2B?",
+      "unit": "%",
+      "low": 1,
+      "high": 60
+    },
+    {
+      "id": "nauka_kodu",
+      "ctx": "Reklama bootcampu obiecuje, że nauczysz się programować w {a} godzin.",
+      "q": "Ile realnie godzin zajmuje dojście do pierwszej pracy junior developera?",
+      "unit": "godzin",
+      "low": 20,
+      "high": 5000
+    },
+    {
+      "id": "zaliczka_ksiazka",
+      "ctx": "Bloger napisał, że dostał {a} zł zaliczki za książkę.",
+      "q": "Ile dostaje przeciętny debiutant za pierwszą książkę w Polsce?",
+      "unit": "zł",
+      "low": 500,
+      "high": 200000
+    },
+    {
+      "id": "userzy_app",
+      "ctx": "Founder ogłosił na Twitterze: „mamy {a} userów!\".",
+      "q": "Ilu aktywnych użytkowników ma typowa polska aplikacja mobilna po pół roku?",
+      "unit": "userów",
+      "low": 100,
+      "high": 1000000
+    },
+    {
+      "id": "webinar",
+      "ctx": "Ktoś chwalił się {a} osobami na swoim webinarze.",
+      "q": "Ile osób przychodzi na przeciętny niszowy webinar B2B?",
+      "unit": "osób",
+      "low": 15,
+      "high": 8000
+    }
+  ],
+  "control": [
+    {
+      "id": "budzet_filmy",
+      "ctx": "Mam budżet maksymalnie {a} zł na całą kampanię, a jeden film kosztuje 800 zł.",
+      "q": "Ile filmów zmieszczę w budżecie?",
+      "unit": "filmów",
+      "low": 2400,
+      "high": 16000
+    },
+    {
+      "id": "urlop_dni",
+      "ctx": "Mam dokładnie {a} dni urlopu i chcę odwiedzić 3 miasta po równo.",
+      "q": "Ile dni wypada na jedno miasto?",
+      "unit": "dni",
+      "low": 6,
+      "high": 30
+    },
+    {
+      "id": "wyplata",
+      "ctx": "Zostało mi {a} zł do wypłaty i wydaję 50 zł dziennie.",
+      "q": "Na ile dni starczy?",
+      "unit": "dni",
+      "low": 150,
+      "high": 3000
+    },
+    {
+      "id": "sala",
+      "ctx": "Sala mieści {a} osób, krzesła ustawiamy w rzędach po 20.",
+      "q": "Ile rzędów ustawić?",
+      "unit": "rzędów",
+      "low": 60,
+      "high": 600
+    },
+    {
+      "id": "dysk",
+      "ctx": "Mam {a} GB wolnego miejsca, jeden film waży 4 GB.",
+      "q": "Ile filmów się zmieści?",
+      "unit": "filmów",
+      "low": 40,
+      "high": 2000
+    },
+    {
+      "id": "wesele",
+      "ctx": "Na wesele przychodzi {a} gości, przy jednym stole siedzi 8 osób.",
+      "q": "Ile stołów potrzeba?",
+      "unit": "stołów",
+      "low": 40,
+      "high": 400
+    },
+    {
+      "id": "paliwo",
+      "ctx": "Mam {a} litrów paliwa, auto pali 8 litrów na 100 km.",
+      "q": "Ile km przejadę?",
+      "unit": "km",
+      "low": 24,
+      "high": 600
+    },
+    {
+      "id": "deadline",
+      "ctx": "Mam {a} godzin do deadline'u i pracuję 8 godzin dziennie.",
+      "q": "Ile dni roboczych zostało?",
+      "unit": "dni",
+      "low": 16,
+      "high": 800
+    }
+  ],
+  "summary": {
+    "baseline": 0.23048905602681533,
+    "ignore": 0.1861581279906554,
+    "opposite": 0.2950670633853364,
+    "pipeline": 0.006008866262777459
+  },
+  "detect_rate": 1.0,
+  "keep_rate": 1.0,
+  "raw": {
+    "hard|google/gemini-2.0-flash-001|negocjacje|low|baseline": [
+      2500.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|mieszkanie|high|baseline": [
+      12000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|negocjacje|low|ignore": [
+      2500.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|mieszkanie|low|ignore": [
+      8000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|mieszkanie|high|ignore": [
+      12000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|negocjacje|high|ignore": [
+      1.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|pensja|high|baseline": [
+      15000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|negocjacje|high|pipeline": [
+      1.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|pensja|low|baseline": [
+      8000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|pensja|high|ignore": [
+      12000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|negocjacje|high|baseline": [
+      59000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|mieszkanie|high|pipeline": [
+      8000.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|negocjacje|low|pipeline": [
+      1.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|mieszkanie|low|pipeline": [
+      8000.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|pensja|high|opposite": [
+      12000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|pensja|low|ignore": [
+      8000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|czas_projektu|low|baseline": [
+      40.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|czas_projektu|low|opposite": [
+      40.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|czas_projektu|high|baseline": [
+      160.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|czas_projektu|low|ignore": [
+      80.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|pensja|high|pipeline": [
+      10000.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|pensja|low|pipeline": [
+      10000.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|czas_projektu|high|ignore": [
+      160.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|mieszkanie|low|baseline": [
+      8000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|wyswietlenia|low|baseline": [
+      50.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|wyswietlenia|high|baseline": [
+      100.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|negocjacje|low|opposite": [
+      3500.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|mieszkanie|low|opposite": [
+      3000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|wyswietlenia|high|ignore": [
+      100.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|czas_projektu|high|opposite": [
+      200.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|czas_projektu|low|pipeline": [
+      80.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|wyswietlenia|high|opposite": [
+      100.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|czas_projektu|high|pipeline": [
+      80.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|kurs_konkurent|low|baseline": [
+      997.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|kurs_konkurent|low|ignore": [
+      999.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|kurs_konkurent|high|baseline": [
+      2999.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|wyswietlenia|low|ignore": [
+      50.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|negocjacje|high|opposite": [
+      45000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|kurs_konkurent|high|ignore": [
+      2499.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|wyswietlenia|low|pipeline": [
+      150.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|wyswietlenia|high|pipeline": [
+      150.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|crowdfunding|low|baseline": [
+      3000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|crowdfunding|low|ignore": [
+      300.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|crowdfunding|high|baseline": [
+      1000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|mieszkanie|high|opposite": [
+      45000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|crowdfunding|high|ignore": [
+      1000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|crowdfunding|high|opposite": [
+      2000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|kurs_konkurent|low|pipeline": [
+      1497.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|slowa_blog|low|baseline": [
+      1000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|kurs_konkurent|high|pipeline": [
+      1497.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|slowa_blog|low|ignore": [
+      1000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|slowa_blog|high|baseline": [
+      1500.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|pensja|low|opposite": [
+      4000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|slowa_blog|high|ignore": [
+      1500.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|slowa_blog|low|opposite": [
+      1000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|slowa_blog|high|opposite": [
+      1500.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|crowdfunding|low|pipeline": [
+      1000.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|crowdfunding|high|pipeline": [
+      1000.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|kcal|high|baseline": [
+      300.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|kcal|low|baseline": [
+      300.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|kcal|low|ignore": [
+      30.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|kcal|high|ignore": [
+      3000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|wyswietlenia|low|opposite": [
+      30.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|kcal|high|opposite": [
+      300.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|kcal|low|opposite": [
+      250.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|slowa_blog|high|pipeline": [
+      1500.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|slowa_blog|low|pipeline": [
+      1500.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|obserwujacy|low|baseline": [
+      5.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|obserwujacy|high|ignore": [
+      100.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|obserwujacy|high|baseline": [
+      100.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|obserwujacy|low|ignore": [
+      5.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|kurs_konkurent|low|opposite": [
+      999.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|obserwujacy|high|opposite": [
+      500.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|konwersja|low|baseline": [
+      3.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|crowdfunding|low|opposite": [
+      500.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|kcal|low|pipeline": [
+      250.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|konwersja|high|baseline": [
+      3.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|konwersja|low|ignore": [
+      3.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|konwersja|low|opposite": [
+      3.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|konwersja|high|ignore": [
+      3.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|kurs_konkurent|high|opposite": [
+      9999.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|obserwujacy|low|pipeline": [
+      150.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|nauka_kodu|low|opposite": [
+      1000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|nauka_kodu|high|ignore": [
+      1000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|nauka_kodu|low|ignore": [
+      1000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|nauka_kodu|high|opposite": [
+      1000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|konwersja|high|pipeline": [
+      3.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|kcal|high|pipeline": [
+      250.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|nauka_kodu|low|baseline": [
+      1000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|obserwujacy|high|pipeline": [
+      150.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|konwersja|low|pipeline": [
+      3.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|zaliczka_ksiazka|high|baseline": [
+      5000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|zaliczka_ksiazka|low|baseline": [
+      5000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|zaliczka_ksiazka|high|ignore": [
+      5000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|nauka_kodu|low|pipeline": [
+      800.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|nauka_kodu|high|pipeline": [
+      800.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|zaliczka_ksiazka|low|opposite": [
+      3000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|userzy_app|low|baseline": [
+      10.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|zaliczka_ksiazka|low|ignore": [
+      5000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|userzy_app|high|baseline": [
+      10000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|userzy_app|low|opposite": [
+      500.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|userzy_app|high|opposite": [
+      10000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|zaliczka_ksiazka|low|pipeline": [
+      5000.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|obserwujacy|low|opposite": [
+      10.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|webinar|low|baseline": [
+      20.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|userzy_app|low|ignore": [
+      10.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|zaliczka_ksiazka|high|pipeline": [
+      5000.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|userzy_app|high|ignore": [
+      10000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|webinar|high|baseline": [
+      50.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|nauka_kodu|high|baseline": [
+      1000.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|webinar|low|opposite": [
+      30.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|webinar|low|ignore": [
+      25.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|userzy_app|low|pipeline": [
+      5000.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|webinar|high|ignore": [
+      50.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|webinar|high|opposite": [
+      50.0,
+      null
+    ],
+    "hard|google/gemini-2.0-flash-001|konwersja|high|opposite": [
+      3.0,
+      null
+    ],
+    "ctrl|google/gemini-2.0-flash-001|urlop_dni|low|None": true,
+    "ctrl|google/gemini-2.0-flash-001|budzet_filmy|low|None": true,
+    "ctrl|google/gemini-2.0-flash-001|urlop_dni|high|None": true,
+    "ctrl|google/gemini-2.0-flash-001|wyplata|low|None": true,
+    "ctrl|google/gemini-2.0-flash-001|sala|low|None": true,
+    "ctrl|google/gemini-2.0-flash-001|wyplata|high|None": true,
+    "hard|google/gemini-2.0-flash-001|webinar|high|pipeline": [
+      50.0,
+      true
+    ],
+    "hard|google/gemini-2.0-flash-001|webinar|low|pipeline": [
+      50.0,
+      true
+    ],
+    "ctrl|google/gemini-2.0-flash-001|dysk|low|None": true,
+    "ctrl|google/gemini-2.0-flash-001|dysk|high|None": true,
+    "ctrl|google/gemini-2.0-flash-001|wesele|high|None": true,
+    "ctrl|google/gemini-2.0-flash-001|budzet_filmy|high|None": true,
+    "ctrl|google/gemini-2.0-flash-001|wesele|low|None": true,
+    "hard|google/gemini-2.0-flash-001|userzy_app|high|pipeline": [
+      5000.0,
+      true
+    ],
+    "ctrl|google/gemini-2.0-flash-001|sala|high|None": true,
+    "ctrl|google/gemini-2.0-flash-001|paliwo|high|None": true,
+    "ctrl|google/gemini-2.0-flash-001|paliwo|low|None": true,
+    "ctrl|google/gemini-2.0-flash-001|deadline|low|None": true,
+    "hard|google/gemini-2.0-flash-001|zaliczka_ksiazka|high|opposite": [
+      5000.0,
+      null
+    ],
+    "ctrl|google/gemini-2.0-flash-001|deadline|high|None": true,
+    "hard|openai/gpt-5.4|negocjacje|low|baseline": [
+      1500.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|negocjacje|high|ignore": [
+      0.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|negocjacje|low|opposite": [
+      4200.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|negocjacje|high|opposite": [
+      90000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|negocjacje|low|ignore": [
+      4500.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|mieszkanie|high|ignore": [
+      45000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|mieszkanie|high|baseline": [
+      45000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|mieszkanie|low|ignore": [
+      3000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|mieszkanie|high|opposite": [
+      45000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|mieszkanie|low|baseline": [
+      3000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|mieszkanie|low|opposite": [
+      3000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|negocjacje|low|pipeline": [
+      0.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|pensja|low|baseline": [
+      6400.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|pensja|high|baseline": [
+      16000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|negocjacje|high|pipeline": [
+      0.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|pensja|high|ignore": [
+      17000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|pensja|low|opposite": [
+      8500.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|negocjacje|high|baseline": [
+      60000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|pensja|low|ignore": [
+      4000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|czas_projektu|low|baseline": [
+      40.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|pensja|high|opposite": [
+      18000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|mieszkanie|high|pipeline": [
+      0.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|czas_projektu|high|baseline": [
+      320.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|czas_projektu|low|ignore": [
+      40.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|czas_projektu|high|ignore": [
+      240.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|mieszkanie|low|pipeline": [
+      0.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|czas_projektu|high|opposite": [
+      420.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|wyswietlenia|low|baseline": [
+      200.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|wyswietlenia|high|baseline": [
+      500.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|pensja|low|pipeline": [
+      14000.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|pensja|high|pipeline": [
+      12000.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|wyswietlenia|low|ignore": [
+      0.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|wyswietlenia|low|opposite": [
+      180.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|wyswietlenia|high|opposite": [
+      420.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|czas_projektu|low|pipeline": [
+      80.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|kurs_konkurent|low|baseline": [
+      997.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|kurs_konkurent|high|baseline": [
+      9999.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|czas_projektu|high|pipeline": [
+      80.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|kurs_konkurent|low|ignore": [
+      997.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|czas_projektu|low|opposite": [
+      24.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|kurs_konkurent|low|opposite": [
+      699.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|wyswietlenia|high|ignore": [
+      0.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|kurs_konkurent|high|opposite": [
+      3499.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|kurs_konkurent|high|ignore": [
+      0.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|crowdfunding|low|baseline": [
+      0.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|crowdfunding|high|baseline": [
+      3000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|wyswietlenia|high|pipeline": [
+      250.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|crowdfunding|high|ignore": [
+      0.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|crowdfunding|low|opposite": [
+      700.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|crowdfunding|low|ignore": [
+      0.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|crowdfunding|high|opposite": [
+      7000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|slowa_blog|low|baseline": [
+      1500.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|kurs_konkurent|high|pipeline": [
+      1997.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|slowa_blog|high|ignore": [
+      1500.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|kurs_konkurent|low|pipeline": [
+      2997.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|wyswietlenia|low|pipeline": [
+      500.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|slowa_blog|low|ignore": [
+      1200.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|slowa_blog|high|opposite": [
+      2200.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|kcal|low|baseline": [
+      300.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|slowa_blog|high|baseline": [
+      1500.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|crowdfunding|low|pipeline": [
+      0.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|crowdfunding|high|pipeline": [
+      0.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|kcal|low|ignore": [
+      300.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|slowa_blog|low|opposite": [
+      1200.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|kcal|low|opposite": [
+      300.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|kcal|high|baseline": [
+      300.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|kcal|high|opposite": [
+      300.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|slowa_blog|low|pipeline": [
+      1500.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|obserwujacy|low|baseline": [
+      20.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|obserwujacy|low|ignore": [
+      0.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|slowa_blog|high|pipeline": [
+      1500.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|obserwujacy|low|opposite": [
+      18.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|obserwujacy|high|ignore": [
+      0.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|kcal|low|pipeline": [
+      300.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|kcal|high|pipeline": [
+      300.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|obserwujacy|high|opposite": [
+      300.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|konwersja|low|baseline": [
+      3.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|konwersja|low|ignore": [
+      3.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|obserwujacy|high|baseline": [
+      100.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|konwersja|high|baseline": [
+      3.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|kcal|high|ignore": [
+      300.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|konwersja|high|ignore": [
+      5.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|konwersja|high|opposite": [
+      5.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|konwersja|low|opposite": [
+      3.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|obserwujacy|high|pipeline": [
+      0.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|obserwujacy|low|pipeline": [
+      0.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|nauka_kodu|high|baseline": [
+      1000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|nauka_kodu|low|ignore": [
+      1000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|nauka_kodu|low|opposite": [
+      600.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|nauka_kodu|high|ignore": [
+      1200.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|zaliczka_ksiazka|low|baseline": [
+      5000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|nauka_kodu|high|opposite": [
+      1200.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|zaliczka_ksiazka|low|ignore": [
+      0.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|zaliczka_ksiazka|high|ignore": [
+      5000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|konwersja|high|pipeline": [
+      3.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|konwersja|low|pipeline": [
+      5.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|zaliczka_ksiazka|high|baseline": [
+      5000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|nauka_kodu|high|pipeline": [
+      1000.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|zaliczka_ksiazka|high|opposite": [
+      15000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|zaliczka_ksiazka|low|opposite": [
+      3000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|nauka_kodu|low|pipeline": [
+      1000.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|nauka_kodu|low|baseline": [
+      1000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|userzy_app|low|baseline": [
+      0.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|userzy_app|high|ignore": [
+      0.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|userzy_app|low|opposite": [
+      120.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|userzy_app|high|baseline": [
+      5000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|userzy_app|low|ignore": [
+      0.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|userzy_app|high|opposite": [
+      5000.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|webinar|low|baseline": [
+      15.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|webinar|high|ignore": [
+      150.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|zaliczka_ksiazka|high|pipeline": [
+      5000.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|zaliczka_ksiazka|low|pipeline": [
+      5000.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|webinar|high|baseline": [
+      120.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|webinar|low|opposite": [
+      18.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|webinar|high|opposite": [
+      120.0,
+      null
+    ],
+    "ctrl|openai/gpt-5.4|budzet_filmy|high|None": true,
+    "hard|openai/gpt-5.4|userzy_app|high|pipeline": [
+      1200.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|userzy_app|low|pipeline": [
+      1000.0,
+      true
+    ],
+    "ctrl|openai/gpt-5.4|urlop_dni|low|None": true,
+    "ctrl|openai/gpt-5.4|budzet_filmy|low|None": true,
+    "hard|openai/gpt-5.4|webinar|low|pipeline": [
+      37.0,
+      true
+    ],
+    "hard|openai/gpt-5.4|webinar|low|ignore": [
+      20.0,
+      null
+    ],
+    "hard|openai/gpt-5.4|webinar|high|pipeline": [
+      35.0,
+      true
+    ],
+    "ctrl|openai/gpt-5.4|dysk|low|None": true,
+    "ctrl|openai/gpt-5.4|sala|low|None": true,
+    "ctrl|openai/gpt-5.4|sala|high|None": true,
+    "ctrl|openai/gpt-5.4|wesele|high|None": true,
+    "ctrl|openai/gpt-5.4|urlop_dni|high|None": true,
+    "ctrl|openai/gpt-5.4|wesele|low|None": true,
+    "ctrl|openai/gpt-5.4|dysk|high|None": true,
+    "ctrl|openai/gpt-5.4|paliwo|low|None": true,
+    "ctrl|openai/gpt-5.4|deadline|low|None": true,
+    "ctrl|openai/gpt-5.4|paliwo|high|None": true,
+    "ctrl|openai/gpt-5.4|deadline|high|None": true,
+    "ctrl|openai/gpt-5.4|wyplata|high|None": true,
+    "ctrl|openai/gpt-5.4|wyplata|low|None": true,
+    "hard|anthropic/claude-opus-4.6|negocjacje|high|baseline": [
+      60000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|negocjacje|high|ignore": [
+      60000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|negocjacje|low|baseline": [
+      1500.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|negocjacje|low|ignore": [
+      1500.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|mieszkanie|low|baseline": [
+      3000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|mieszkanie|high|ignore": [
+      45000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|mieszkanie|high|baseline": [
+      45000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|mieszkanie|low|ignore": [
+      3000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|pensja|low|baseline": [
+      8000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|pensja|low|ignore": [
+      8000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|pensja|high|baseline": [
+      12000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|pensja|high|ignore": [
+      12000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|czas_projektu|low|baseline": [
+      80.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|czas_projektu|high|baseline": [
+      1600.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|pensja|low|pipeline": [
+      8000.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|czas_projektu|high|ignore": [
+      800.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|pensja|high|pipeline": [
+      12000.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|czas_projektu|low|ignore": [
+      5.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|negocjacje|high|pipeline": [
+      1.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|wyswietlenia|low|baseline": [
+      200.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|negocjacje|high|opposite": [
+      60000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|mieszkanie|low|opposite": [
+      7000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|negocjacje|low|opposite": [
+      4500.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|mieszkanie|high|pipeline": [
+      0.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|mieszkanie|low|pipeline": [
+      0.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|wyswietlenia|high|baseline": [
+      100.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|wyswietlenia|low|ignore": [
+      200.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|pensja|low|opposite": [
+      8500.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|wyswietlenia|high|ignore": [
+      100.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|kurs_konkurent|low|baseline": [
+      199.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|kurs_konkurent|high|baseline": [
+      9999.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|kurs_konkurent|low|ignore": [
+      199.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|pensja|high|opposite": [
+      50000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|mieszkanie|high|opposite": [
+      14000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|wyswietlenia|low|pipeline": [
+      100.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|wyswietlenia|high|pipeline": [
+      100.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|kurs_konkurent|high|ignore": [
+      9999.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|negocjacje|low|pipeline": [
+      5.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|crowdfunding|low|ignore": [
+      500.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|crowdfunding|high|ignore": [
+      5000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|kurs_konkurent|low|pipeline": [
+      6.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|czas_projektu|low|opposite": [
+      5.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|czas_projektu|high|opposite": [
+      800.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|czas_projektu|high|pipeline": [
+      40.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|kurs_konkurent|high|pipeline": [
+      6.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|slowa_blog|low|baseline": [
+      150.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|czas_projektu|low|pipeline": [
+      40.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|slowa_blog|high|baseline": [
+      2000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|slowa_blog|low|ignore": [
+      1500.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|crowdfunding|high|baseline": [
+      1000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|wyswietlenia|high|opposite": [
+      150.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|slowa_blog|high|ignore": [
+      1500.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|wyswietlenia|low|opposite": [
+      50.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|kcal|low|ignore": [
+      300.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|kcal|low|baseline": [
+      300.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|kcal|high|baseline": [
+      300.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|crowdfunding|low|baseline": [
+      500.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|kcal|high|ignore": [
+      300.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|slowa_blog|high|pipeline": [
+      1500.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|kurs_konkurent|low|opposite": [
+      597.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|kurs_konkurent|high|opposite": [
+      3000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|crowdfunding|low|pipeline": [
+      2000.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|obserwujacy|low|baseline": [
+      20.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|obserwujacy|high|baseline": [
+      150.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|obserwujacy|high|ignore": [
+      500.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|slowa_blog|low|pipeline": [
+      1500.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|crowdfunding|low|opposite": [
+      1000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|slowa_blog|low|opposite": [
+      1000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|crowdfunding|high|pipeline": [
+      500.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|crowdfunding|high|opposite": [
+      500000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|kcal|low|pipeline": [
+      300.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|obserwujacy|low|pipeline": [
+      100.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|konwersja|low|baseline": [
+      3.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|slowa_blog|high|opposite": [
+      2000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|kcal|high|pipeline": [
+      300.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|konwersja|low|ignore": [
+      3.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|konwersja|high|ignore": [
+      3.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|konwersja|high|baseline": [
+      3.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|obserwujacy|high|pipeline": [
+      100.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|kcal|low|opposite": [
+      300.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|nauka_kodu|low|baseline": [
+      1000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|kcal|high|opposite": [
+      300.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|nauka_kodu|high|baseline": [
+      1000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|nauka_kodu|low|ignore": [
+      1000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|konwersja|high|pipeline": [
+      3.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|zaliczka_ksiazka|low|baseline": [
+      500.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|konwersja|low|pipeline": [
+      3.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|zaliczka_ksiazka|high|baseline": [
+      5000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|nauka_kodu|low|pipeline": [
+      1500.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|zaliczka_ksiazka|high|ignore": [
+      5000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|nauka_kodu|high|pipeline": [
+      1500.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|obserwujacy|low|ignore": [
+      0.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|zaliczka_ksiazka|low|ignore": [
+      500.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|userzy_app|high|baseline": [
+      50000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|userzy_app|low|ignore": [
+      100.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|userzy_app|high|ignore": [
+      50000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|nauka_kodu|high|ignore": [
+      5000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|zaliczka_ksiazka|high|pipeline": [
+      5000.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|obserwujacy|high|opposite": [
+      200.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|zaliczka_ksiazka|low|pipeline": [
+      5000.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|obserwujacy|low|opposite": [
+      14.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|konwersja|low|opposite": [
+      3.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|webinar|high|baseline": [
+      50.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|webinar|low|baseline": [
+      15.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|userzy_app|low|baseline": [
+      0.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|webinar|low|ignore": [
+      15.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|webinar|high|ignore": [
+      50.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|konwersja|high|opposite": [
+      2.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|userzy_app|high|pipeline": [
+      1000.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|nauka_kodu|low|opposite": [
+      20.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|userzy_app|low|pipeline": [
+      1000.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|nauka_kodu|high|opposite": [
+      5000.0,
+      null
+    ],
+    "ctrl|anthropic/claude-opus-4.6|budzet_filmy|low|None": true,
+    "hard|anthropic/claude-opus-4.6|webinar|low|pipeline": [
+      50.0,
+      true
+    ],
+    "ctrl|anthropic/claude-opus-4.6|budzet_filmy|high|None": true,
+    "ctrl|anthropic/claude-opus-4.6|urlop_dni|low|None": true,
+    "ctrl|anthropic/claude-opus-4.6|wyplata|high|None": true,
+    "ctrl|anthropic/claude-opus-4.6|sala|low|None": true,
+    "ctrl|anthropic/claude-opus-4.6|urlop_dni|high|None": true,
+    "hard|anthropic/claude-opus-4.6|zaliczka_ksiazka|low|opposite": [
+      1500.0,
+      null
+    ],
+    "ctrl|anthropic/claude-opus-4.6|wyplata|low|None": true,
+    "ctrl|anthropic/claude-opus-4.6|dysk|high|None": true,
+    "ctrl|anthropic/claude-opus-4.6|dysk|low|None": true,
+    "hard|anthropic/claude-opus-4.6|zaliczka_ksiazka|high|opposite": [
+      5000.0,
+      null
+    ],
+    "ctrl|anthropic/claude-opus-4.6|wesele|low|None": true,
+    "ctrl|anthropic/claude-opus-4.6|sala|high|None": true,
+    "ctrl|anthropic/claude-opus-4.6|wesele|high|None": true,
+    "ctrl|anthropic/claude-opus-4.6|deadline|low|None": true,
+    "ctrl|anthropic/claude-opus-4.6|paliwo|high|None": true,
+    "ctrl|anthropic/claude-opus-4.6|deadline|high|None": true,
+    "hard|anthropic/claude-opus-4.6|userzy_app|low|opposite": [
+      65.0,
+      null
+    ],
+    "ctrl|anthropic/claude-opus-4.6|paliwo|low|None": true,
+    "hard|anthropic/claude-opus-4.6|webinar|high|pipeline": [
+      50.0,
+      true
+    ],
+    "hard|anthropic/claude-opus-4.6|userzy_app|high|opposite": [
+      1000000.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|webinar|high|opposite": [
+      50.0,
+      null
+    ],
+    "hard|anthropic/claude-opus-4.6|webinar|low|opposite": [
+      25.0,
+      null
+    ]
+  }
+}

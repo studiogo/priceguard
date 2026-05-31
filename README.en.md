@@ -26,25 +26,29 @@ There is one difference. In a human you can't measure this error on the spot. In
 
 ## What it costs you
 
-The same work, priced twice. Once after the client throws a low number, once after a high one. The "spread" column shows how many times the high-anchor quote beats the low-anchor one. A fair tool should stay near 1×.
+Once the client names a price, the model follows it — both ways.
 
-| Job | Client says | Plain AI | Spread | With PriceGuard | Spread |
-|---|---|---|---|---|---|
-| Company website | 800 → 30,000 | 4,500 → 30,000 | **6.7×** | 5,000 → 8,500 | **1.7×** |
-| Hourly rate | 40 → 800 | 150 → 800 | 5.3× | 150 → 200 | 1.3× |
-| SEO audit | 500 → 50,000 | 3,000 → 21,500 | 7.2× | 4,000 → 5,000 | 1.2× |
-| Promo video | 300 → 40,000 | 5,000 → 50,000 | 10.0× | 5,000 → 10,000 | 2.0× |
-| Logo + identity | 50 → 15,000 | 5,000 → 15,000 | 3.0× | 4,000 → 4,000 | 1.0× |
-| Startup pre-seed | 50k → 50M | 1.4M → 3.0M | 2.2× | 3.0M → 3.5M | 1.2× |
-| Social media / mo | 500 → 30,000 | 1,750 → 4,000 | 2.3× | 2,250 → 2,500 | 1.1× |
-| Strategy hour | 100 → 5,000 | 250 → 5,000 | 20.0× | 275 → 225 | 0.8× |
-| 1-day training | 1,000 → 80,000 | 1,000 → 24,000 | 24.0× | 4,500 → 8,500 | 1.9× |
-| Meta campaign / mo | 1,000 → 100,000 | 2,000 → 10,000 | 5.0× | 2,250 → 2,750 | 1.2× |
-| **Median** | | | **6.0×** | | **1.2×** |
+**Client names too low → AI underprices, and you give money away.**
+> "Our training budget is around **1,000 zł**." AI quotes **1,000 zł** — though a day of training is worth about 5,000. You just gave away 80% of your fee.
 
-*Amounts in PLN (Polish freelance market), 4 models, median across runs. Plain AI swings the same job ~6× on average. PriceGuard holds it near 1.2×.*
+**Client names too high → AI overprices, and you lose the deal.**
+> "The last agency charged **30,000 zł** for the site." AI quotes **30,000** — though that site is worth ~5,000. With that offer, the client walks.
 
-You lose on both sides. A low anchor underprices the job and you leave money on the table. A high anchor overprices it and you scare the client off — or quote a rate you can't defend.
+Below: how far plain AI strays from a fair quote when the client names a price — and how close to zero PriceGuard keeps it.
+
+| Job | Client too low → AI | → PriceGuard | Client too high → AI | → PriceGuard |
+|---|---|---|---|---|
+| 1-day training | **−80%** | −10% | +380% | +70% |
+| SEO audit | **−40%** | −20% | +330% | 0% |
+| Social media | **−30%** | −10% | +60% | 0% |
+| Meta campaign | **−27%** | −18% | +264% | 0% |
+| Company website | −10% | 0% | +500% | +70% |
+| Hourly rate | 0% | 0% | +433% | +33% |
+| Promo video | 0% | 0% | +900% | +100% |
+| Strategy hour | 0% | +10% | +1900% | −10% |
+| **Median (10 situations)** | **−19%** | **0%** | **+355%** | **+8%** |
+
+*Deviation from a fair quote (model with no anchor), 4 models, median. Plain AI underprices by up to 80% and overprices by hundreds of percent. PriceGuard stays near zero both ways.*
 
 **Read this as instability, not accuracy.** PriceGuard does not know the "true" market price. It shows one thing only: a plain model gives you a near-random number that depends on what it heard. PriceGuard replaces it with one stable answer.
 
@@ -80,29 +84,33 @@ Only one thing works: the model must not see the anchor. A "please ignore this n
 
 ---
 
-## Install
+## Install — all you need
 
-PriceGuard ships in two forms: a **Claude Code skill** (no key needed) and **standalone Python scripts** that reproduce the study (need an OpenRouter key).
+PriceGuard is a **Claude Code skill**. It runs locally, through Claude Code sub-agents. **No key, no account** — you copy the folder and you're done.
 
-### Skill — macOS / Linux
+### macOS / Linux
 
 ```bash
 cp -r priceguard ~/.claude/skills/priceguard
 ```
 
-### Skill — Windows (PowerShell)
+### Windows (PowerShell)
 
 ```powershell
 Copy-Item -Recurse priceguard "$env:USERPROFILE\.claude\skills\priceguard"
 ```
 
-The skill loads automatically when you ask Claude Code to price something and an outside number is in play.
+The skill loads automatically when you ask Claude Code to price something and an outside number is in the conversation. That is the whole install. The rest of this page is research material — **you don't need to touch it**.
 
-### Scripts (optional, to reproduce the measurements)
+---
 
-You need Python 3 and an [OpenRouter](https://openrouter.ai) API key.
+## For skeptics: reproduce our measurements (optional)
 
-**macOS / Linux** — store the key in the Keychain *or* an environment variable:
+The scripts in `bin/` are **our research infrastructure**. We used them to test the anchoring effect across 11 models (Gemini, GPT, Llama, Mistral…) and prove they all have it, not just Claude. **You don't need them to use PriceGuard.** Run them only if you want to verify the numbers on this page yourself.
+
+Then you need Python 3 and an [OpenRouter](https://openrouter.ai) key (one key gives access to many models):
+
+**macOS / Linux** — key in the Keychain *or* an environment variable:
 
 ```bash
 # option A: macOS Keychain (the scripts read it automatically)
@@ -112,7 +120,7 @@ export OPENROUTER_API_KEY="sk-or-v1-..."
 python3 bin/anchor-online.py
 ```
 
-**Windows (PowerShell)** — use an environment variable (`python`, not `python3`):
+**Windows (PowerShell)** — environment variable (`python`, not `python3`):
 
 ```powershell
 setx OPENROUTER_API_KEY "sk-or-v1-..."
@@ -120,13 +128,12 @@ setx OPENROUTER_API_KEY "sk-or-v1-..."
 python bin\anchor-online.py
 ```
 
----
-
-## Scripts
-
 | Script | What it does |
 |---|---|
-| `bin/anchor-detect.py` | Detect + mask the anchor, then estimate blind |
+| `bin/anchor-spike.py` | First quick test of the anchoring effect (stage 1) |
+| `bin/anchor-detect.py` | The core fix — detect and mask the anchor, then estimate blind (stage 2) |
+| `bin/anchor-ambiguous.py` | Test on ambiguous numbers, the hardest case (stage 2b) |
+| `bin/anchor-discriminate.py` | Checks whether the model tells an anchor from a constraint (stage 2c) |
 | `bin/anchor-client-demo.py` | The client-situation demo (baseline / ignore / opposite / isolation) |
 | `bin/anchor-online.py` | Does internet fix it? (offline vs web search, 3 conditions) |
 | `bin/anchor-table.py` | Builds the spread table above |

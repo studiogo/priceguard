@@ -182,7 +182,7 @@ def main():
 
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     dump = {"|".join(str(x) for x in k): v for k, v in res.items()}
-    with open(args.out, "w") as fh:
+    with open(args.out, "w", encoding="utf-8") as fh:
         json.dump({"models": MODELS, "scenarios": SCEN, "conds": CONDS,
                    "summary": {c: {"a_index_median": boot_ci(A[c])[0], "swing_pct_median": (boot_ci(S[c])[0]-1)*100,
                                    "avg_web_cites": (sum(CITES[c])/len(CITES[c])) if CITES[c] else 0} for c in CONDS},

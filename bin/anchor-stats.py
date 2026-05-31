@@ -24,7 +24,7 @@ def boot_ci(vals, n=5000):
 
 
 def collect(path, q_field, unwrap):
-    d = json.load(open(path))
+    d = json.load(open(path, encoding="utf-8"))
     qs = {q["id"]: q for q in d[q_field]}
     raw = d["raw"]
     tmp = {}

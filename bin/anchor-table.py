@@ -14,8 +14,8 @@ Dla każdego środowiska: zaniżenie = mediana(wycena|niska kotwica)/ref - 1 ; z
 import json, os, statistics as st
 
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data/")
-ON = json.load(open(D + "online-vs-offline-2026-05-31.json"))
-CD = json.load(open(D + "client-demo-2026-05-30.json"))
+ON = json.load(open(D + "online-vs-offline-2026-05-31.json", encoding="utf-8"))
+CD = json.load(open(D + "client-demo-2026-05-30.json", encoding="utf-8"))
 MODELS = ON["models"]
 SCEN = [(s["id"], s["low"], s["high"]) for s in ON["scenarios"]]
 

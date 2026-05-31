@@ -26,25 +26,29 @@ Jest jedna różnica. U człowieka tego błędu nie zmierzysz od ręki. U modelu
 
 ## Ile Cię to kosztuje
 
-Ta sama praca, wyceniona dwa razy. Raz po tym, jak klient rzuci niską liczbę, raz po wysokiej. Kolumna „rozjazd" pokazuje, ile razy wycena z wysoką kotwicą przebija wycenę z niską. Uczciwe narzędzie powinno trzymać się blisko 1×.
+Wystarczy, że klient sam rzuci cenę, a AI idzie za nią — w obie strony.
 
-| Praca | Klient mówi | Zwykłe AI | Rozjazd | Z PriceGuard | Rozjazd |
-|---|---|---|---|---|---|
-| Strona firmowa | 800 → 30 000 | 4 500 → 30 000 | **6,7×** | 5 000 → 8 500 | **1,7×** |
-| Stawka godzinowa | 40 → 800 | 150 → 800 | 5,3× | 150 → 200 | 1,3× |
-| Audyt SEO | 500 → 50 000 | 3 000 → 21 500 | 7,2× | 4 000 → 5 000 | 1,2× |
-| Film promocyjny | 300 → 40 000 | 5 000 → 50 000 | 10,0× | 5 000 → 10 000 | 2,0× |
-| Logo + identyfikacja | 50 → 15 000 | 5 000 → 15 000 | 3,0× | 4 000 → 4 000 | 1,0× |
-| Startup (pre-seed) | 50 tys → 50 mln | 1,4 mln → 3,0 mln | 2,2× | 3,0 mln → 3,5 mln | 1,2× |
-| Social media / mies. | 500 → 30 000 | 1 750 → 4 000 | 2,3× | 2 250 → 2 500 | 1,1× |
-| Godzina konsultacji | 100 → 5 000 | 250 → 5 000 | 20,0× | 275 → 225 | 0,8× |
-| Szkolenie 1-dniowe | 1 000 → 80 000 | 1 000 → 24 000 | 24,0× | 4 500 → 8 500 | 1,9× |
-| Kampania Meta / mies. | 1 000 → 100 000 | 2 000 → 10 000 | 5,0× | 2 250 → 2 750 | 1,2× |
-| **Mediana** | | | **6,0×** | | **1,2×** |
+**Klient podaje za niską cenę → AI zaniża, a Ty oddajesz pieniądze.**
+> „Budżet na szkolenie mamy jakieś **1 000 zł**." AI wycenia **1 000 zł** — choć dzień szkolenia jest wart około 5 000. Właśnie oddałeś 80% stawki.
 
-*Kwoty w złotych (polski rynek freelancera), 4 modele, mediana. Zwykłe AI rozjeżdża tę samą pracę średnio sześć razy. PriceGuard trzyma ją koło 1,2×.*
+**Klient podaje za wysoką cenę → AI zawyża, a Ty tracisz zlecenie.**
+> „Poprzednia agencja brała **30 000 zł** za stronę." AI wycenia **30 000** — choć ta strona jest warta ~5 000. Z taką ofertą klient ucieka.
 
-Tracisz po obu stronach. Niska kotwica zaniża cenę i zostawiasz pieniądze na stole. Wysoka kotwica zawyża cenę i odstraszasz klienta — albo podajesz stawkę, której nie obronisz.
+Poniżej: o ile zwykłe AI mija się z uczciwą wyceną, gdy klient sam poda cenę — i jak blisko zera trzyma to PriceGuard.
+
+| Praca | Klient za nisko → AI | → PriceGuard | Klient za wysoko → AI | → PriceGuard |
+|---|---|---|---|---|
+| Szkolenie 1-dniowe | **−80%** | −10% | +380% | +70% |
+| Audyt SEO | **−40%** | −20% | +330% | 0% |
+| Social media | **−30%** | −10% | +60% | 0% |
+| Kampania Meta | **−27%** | −18% | +264% | 0% |
+| Strona firmowa | −10% | 0% | +500% | +70% |
+| Stawka godzinowa | 0% | 0% | +433% | +33% |
+| Film promocyjny | 0% | 0% | +900% | +100% |
+| Godzina konsultacji | 0% | +10% | +1900% | −10% |
+| **Mediana (10 sytuacji)** | **−19%** | **0%** | **+355%** | **+8%** |
+
+*Odchylenie od uczciwej wyceny (model bez kotwicy), 4 modele, mediana. Zwykłe AI zaniża nawet o 80% i zawyża o setki procent. PriceGuard w obie strony trzyma się zera.*
 
 **Czytaj to jako niestabilność, nie trafność.** PriceGuard nie zna „prawdziwej" ceny rynkowej. Pokazuje tylko jedno: zwykły model podaje liczbę niemal losową, zależną od tego, co usłyszał. PriceGuard zastępuje ją jedną stabilną.
 
@@ -80,29 +84,33 @@ Działa tylko jedno: model nie może zobaczyć kotwicy. Prośba „zignoruj tę 
 
 ---
 
-## Instalacja
+## Instalacja — to wszystko, czego potrzebujesz
 
-PriceGuard działa w dwóch postaciach: jako **skill do Claude Code** (bez klucza) i jako **skrypty Pythona**, które odtwarzają badanie (potrzebny klucz OpenRouter).
+PriceGuard to **skill do Claude Code**. Działa lokalnie, przez sub-agenty Claude Code. **Nie wymaga żadnego klucza ani konta** — kopiujesz katalog i gotowe.
 
-### Skill — macOS / Linux
+### macOS / Linux
 
 ```bash
 cp -r priceguard ~/.claude/skills/priceguard
 ```
 
-### Skill — Windows (PowerShell)
+### Windows (PowerShell)
 
 ```powershell
 Copy-Item -Recurse priceguard "$env:USERPROFILE\.claude\skills\priceguard"
 ```
 
-Skill włącza się sam, gdy poprosisz Claude Code o wycenę, a w grze jest cudza liczba.
+Skill włącza się sam, gdy poprosisz Claude Code o wycenę, a w rozmowie jest cudza liczba. To cała instalacja. Reszta tej strony to materiały badawcze — **nie musisz ich ruszać**.
 
-### Skrypty (opcjonalnie — żeby odtworzyć pomiary)
+---
 
-Potrzebujesz Pythona 3 i klucza [OpenRouter](https://openrouter.ai).
+## Dla sceptyków: odtwórz nasze pomiary (opcjonalne)
 
-**macOS / Linux** — trzymaj klucz w Keychain *albo* w zmiennej środowiskowej:
+Skrypty w `bin/` to **nasza infrastruktura badawcza**. Posłużyły, żeby sprawdzić efekt zakotwiczenia na 11 modelach (Gemini, GPT, Llama, Mistral…) — i udowodnić, że mają go wszystkie, nie tylko Claude. **Do używania PriceGuarda są zbędne.** Odpalasz je tylko wtedy, gdy chcesz sam zweryfikować liczby z tej strony.
+
+Wtedy potrzebujesz Pythona 3 i klucza [OpenRouter](https://openrouter.ai) (jeden klucz daje dostęp do wielu modeli):
+
+**macOS / Linux** — klucz w Keychain *albo* w zmiennej środowiskowej:
 
 ```bash
 # wariant A: Keychain macOS (skrypty czytają go same)
@@ -112,7 +120,7 @@ export OPENROUTER_API_KEY="sk-or-v1-..."
 python3 bin/anchor-online.py
 ```
 
-**Windows (PowerShell)** — użyj zmiennej środowiskowej (`python`, nie `python3`):
+**Windows (PowerShell)** — zmienna środowiskowa (`python`, nie `python3`):
 
 ```powershell
 setx OPENROUTER_API_KEY "sk-or-v1-..."
@@ -120,14 +128,13 @@ setx OPENROUTER_API_KEY "sk-or-v1-..."
 python bin\anchor-online.py
 ```
 
----
-
-## Skrypty
-
 | Skrypt | Co robi |
 |---|---|
-| `bin/anchor-detect.py` | Wykrywa i maskuje kotwicę, potem wycenia na ślepo |
-| `bin/anchor-client-demo.py` | Demo na sytuacjach klienckich (baza / zignoruj / przeciwieństwo / izolacja) |
+| `bin/anchor-spike.py` | Pierwszy, szybki test efektu zakotwiczenia (etap 1) |
+| `bin/anchor-detect.py` | Wykrywa i maskuje kotwicę, potem wycenia na ślepo (etap 2) |
+| `bin/anchor-ambiguous.py` | Test na liczbach dwuznacznych, najtrudniejszy przypadek (etap 2b) |
+| `bin/anchor-discriminate.py` | Sprawdza, czy model odróżnia kotwicę od ograniczenia (etap 2c) |
+| `bin/anchor-client-demo.py` | Demo na realnych sytuacjach klienckich (baza / zignoruj / przeciwieństwo / izolacja) |
 | `bin/anchor-online.py` | Czy internet to naprawia? (bez sieci kontra wyszukiwarka, 3 warunki) |
 | `bin/anchor-table.py` | Buduje tabelę rozjazdu z tej strony |
 | `bin/anchor-stats.py` | Liczy przedziały ufności (bootstrap) z zapisanych wyników |

@@ -38,8 +38,8 @@ Podsunięta liczba (kotwica) przyciąga wycenę modelu do siebie — wysoka zawy
 - **NIE** zmyślaj wersji „z kotwicą" ani liczby wpływu — albo zmierz ją drugim wywołaniem (krok 4, surowy strzał), albo napisz „nie zmierzono". Zmyślona liczba w tabeli wpływu = porażka skilla.
 - Jedyne, co działa: model nie widzi kotwicy.
 
-## Wariant przenośny (bez sub-agentów Claude Code)
-Skrypty w `bin/` robią pełny pipeline na OpenRouter (klucz w Keychain `openrouter-api-key`) — każdy może uruchomić u siebie:
+## Wariant przenośny — OPCJONALNY (bez sub-agentów Claude Code)
+Sam lek (procedura wyżej) NIE wymaga klucza ani OpenRoutera — liczy na sub-agentach Claude Code. Poniższe to opcja tylko dla kogoś, kto chce uruchomić pomiary BEZ Claude Code (np. zweryfikować efekt na innych modelach). Skrypty w `bin/` robią pełny pipeline na OpenRouter (klucz w Keychain `openrouter-api-key`):
 - `bin/anchor-detect.py` — wykrywanie + maskowanie + ślepe oszacowanie (kotwica wbudowana w tekst).
 - `bin/anchor-client-demo.py` — demo na realnych sytuacjach klienckich.
 - `bin/anchor-online.py` — czy internet leczy kotwicę (offline vs web search, 3 warunki).

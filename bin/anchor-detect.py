@@ -268,7 +268,7 @@ def main():
 
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     dump = {"|".join(str(x) for x in k): v for k, v in res.items()}
-    with open(args.out, "w") as fh:
+    with open(args.out, "w", encoding="utf-8") as fh:
         json.dump({"models": MODELS, "hard": HARD, "control": CONTROL,
                    "summary": {c: mean(ov[c]) for c in CONDS},
                    "detect_rate": mean(alld) if alld else None,

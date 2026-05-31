@@ -2,29 +2,31 @@
 
 🇵🇱 [Wersja polska / Polish version](README.md)
 
-**Anchoring is a 50-year-old thinking error. The first number you hear shifts your judgment — even when that number is meaningless. AI models make this same mistake, just like humans. When you ask AI to price something and someone's number is already in the conversation, the model drifts toward it — and you can lose money. PriceGuard prevents that: it hides the number from the model and gives an estimate that ignores it.**
+**Ask AI to price a company website. Say the previous agency charged 30,000 zł — it will quote around 30,000. Say it charged 800 zł — it will quote about 4,500. The same work, yet the quote differs sixfold. One number did that.**
+
+This is anchoring — a thinking error described 50 years ago. When you ask AI to price something and a number already came up earlier in the chat, the model drifts toward it. That makes it underprice or overprice the job, and you lose money. PriceGuard prevents this: it hides the number from the model and prices independently of it.
 
 ---
 
 ## What anchoring is
 
-The first number you hear sticks to your judgment. It sways you even when that number is random and unrelated to the topic.
+The first number you hear sticks to your judgment. It affects that judgment even when the number is random and has nothing to do with the topic.
 
-This is not new. In 1974, Daniel Kahneman and Amos Tversky had people spin a wheel of fortune, then asked what percentage of UN countries were African. People who landed on 10 guessed 25% on average. People who landed on 65 guessed 45%. The wheel was random. It moved the answer anyway.
+This is not new. In 1974, Daniel Kahneman and Amos Tversky had people spin a wheel of fortune, then asked: what percentage of UN countries are African? People who landed on 10 answered 25% on average. People who landed on 65 answered 45%. The wheel was completely random, yet it shifted the answers.
 
-Dan Ariely went further. He asked people to write the last two digits of their social security number, then bid on products. Higher digits led to higher bids. The number had nothing to do with the value of the wine or the keyboard, yet it set the price.
+Dan Ariely went further. He asked people to write the last two digits of their social security number, then bid on products. The higher the digits someone wrote, the higher they bid. Those digits had nothing to do with the value of the wine or the keyboard, yet they set the price.
 
 ## AI makes the same mistake
 
-Language models inherit this bias from us. Drop someone else's number into the chat — "the last agency charged 30,000" — and the model drifts toward it. You ask for a fair quote and get an echo of what the model heard.
+Language models picked up this error from us. Drop someone else's number into the chat — "the last agency charged 30,000" — and the model drifts toward it. You ask for a fair quote and get a reflection of what it just read.
 
-There's one difference. In humans you can't measure it on the spot. In a model you can — and you can switch it off.
+There is one difference. In a human you can't measure this error on the spot. In a model you can — and you can switch it off.
 
 ---
 
 ## What it costs you
 
-The same job, priced twice. Once after the client throws a **low** number, once after a **high** one. "Spread" tells you how many times the high-anchor price beats the low-anchor price. A fair tool should stay near 1×.
+The same work, priced twice. Once after the client throws a low number, once after a high one. The "spread" column shows how many times the high-anchor quote beats the low-anchor one. A fair tool should stay near 1×.
 
 | Job | Client says | Plain AI | Spread | With PriceGuard | Spread |
 |---|---|---|---|---|---|
@@ -42,15 +44,15 @@ The same job, priced twice. Once after the client throws a **low** number, once 
 
 *Amounts in PLN (Polish freelance market), 4 models, median across runs. Plain AI swings the same job ~6× on average. PriceGuard holds it near 1.2×.*
 
-You lose both ways. A low anchor underprices the job — you leave money on the table. A high one overprices it — you scare the client off, or quote a number you can't defend.
+You lose on both sides. A low anchor underprices the job and you leave money on the table. A high anchor overprices it and you scare the client off — or quote a rate you can't defend.
 
-**Read this as instability, not accuracy.** PriceGuard does not know the "true" market price. It only shows that a plain model hands you a near-random number — driven by what it heard — and replaces it with one stable answer.
+**Read this as instability, not accuracy.** PriceGuard does not know the "true" market price. It shows one thing only: a plain model gives you a near-random number that depends on what it heard. PriceGuard replaces it with one stable answer.
 
 ---
 
 ## Does internet access fix it? No.
 
-A common assumption: "give the AI a search engine and it will stop parroting the number." We tested it — 4 models, 10 pricing situations, 3 conditions, 240 calls.
+Many assume that giving AI a search engine will stop it from parroting the number. We tested it — 4 models, 10 pricing situations, 3 conditions, 240 calls.
 
 | Condition | Underprices (low anchor) / Overprices (high anchor), median |
 |---|---|
@@ -59,22 +61,22 @@ A common assumption: "give the AI a search engine and it will stop parroting the
 | Internet, active research (forced to check rates) | −33% / **+90%** |
 | **PriceGuard (isolation)** | **+0% / +8%** |
 
-Passive internet barely helps — the model has search but answers from memory anyway. Forced research softens the overpricing but deepens the underpricing. It moves the problem, it doesn't remove it. Only isolation is stable in both directions.
+The internet alone barely helps — the model has search but answers from memory anyway. Forced research reduces the overpricing but deepens the underpricing instead. It moves the problem, it doesn't remove it. Only isolation is stable in both directions.
 
 ---
 
 ## The cure: isolation
 
-One thing works — the model must not see the anchor. Not a "please ignore this number" request (that doesn't help), but physically hiding it. PriceGuard runs five steps:
+Only one thing works: the model must not see the anchor. A "please ignore this number" request is not enough — it doesn't help. The number has to be physically hidden. PriceGuard does it in five steps:
 
-1. **Detect** every number in the question and context.
-2. **Classify** each number:
-   - **ANCHOR** — someone else's suggestion/offer/price. It should not set the fair value.
+1. **Detects** every number in the question and context.
+2. **Classifies** each number:
+   - **ANCHOR** — someone else's suggestion, offer, or price. It should not set the fair value.
    - **CONSTRAINT** — a hard fact the answer must use (a budget as a limit, capacity, time).
-   - Test: *does the fair value change because this number is different?* If not, it's an anchor.
-3. **Spawn a blind sub-agent.** It gets the question with anchors removed (constraints stay). It never sees the anchor, so it estimates independently.
-4. **(Optional) measure the impact** with a separate, raw call.
-5. **Show the result.** The recommendation is the blind estimate. Constraints are applied separately, at the end.
+   - Test: does the fair value change because this number is different? If not, it's an anchor.
+3. **Spawns a blind sub-agent.** It gets the question with anchors removed (constraints stay). It never sees the anchor, so it estimates independently.
+4. **(Optional) measures the anchor's impact** with a separate, raw call.
+5. **Shows the result.** The recommendation is the blind estimate. You apply constraints separately, at the end.
 
 ---
 
@@ -136,9 +138,9 @@ Each script uses only the Python standard library. Run with `--help` for options
 
 ## Honest limitations
 
-- **We measure instability, not truth.** The reference is the model's own blind estimate, not a verified market price. The claim is: *the same work gets ~6 different prices depending on a random number — PriceGuard gives one stable answer.*
-- **The ANCHOR/CONSTRAINT split is ~75% accurate** on natural language. When unsure, the skill shows both versions.
-- **Not perfect.** PriceGuard cuts the spread to ~1.2×, not 1.0×. A few categories still leak +70–100% at the high anchor.
+- **We measure instability, not truth.** The reference is the model's own blind estimate, not a verified market price. The claim is: the same work gets about six different prices depending on a random number, and PriceGuard gives one stable answer.
+- **The ANCHOR/CONSTRAINT split is right about 75% of the time** on natural language. When unsure, the skill shows both versions.
+- **PriceGuard is not perfect.** It cuts the spread to about 1.2×, not 1.0×. A few categories still leak 70–100% at the high anchor.
 
 ---
 

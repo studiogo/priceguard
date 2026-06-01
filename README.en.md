@@ -108,6 +108,10 @@ The skill loads automatically when you ask Claude Code to price something and an
 
 The scripts in `bin/` are **our research infrastructure**. We used them to test the anchoring effect across 11 models (Gemini, GPT, Llama, Mistral…) and prove they all have it, not just Claude. **You don't need them to use PriceGuard.** Run them only if you want to verify the numbers on this page yourself.
 
+![Hundreds of Claude Code agents running in parallel](assets/claude-code-agents-skala.png)
+
+*We ran the measurements at scale — the same way, with many Claude Code agents at once. Above is an example screenshot of such a run (from another one of our experiments).*
+
 Then you need Python 3 and an [OpenRouter](https://openrouter.ai) key (one key gives access to many models):
 
 **macOS / Linux** — key in the Keychain *or* an environment variable:

@@ -108,6 +108,10 @@ Skill włącza się sam, gdy poprosisz Claude Code o wycenę, a w rozmowie jest 
 
 Skrypty w `bin/` to **nasza infrastruktura badawcza**. Posłużyły, żeby sprawdzić efekt zakotwiczenia na 11 modelach (Gemini, GPT, Llama, Mistral…) — i udowodnić, że mają go wszystkie, nie tylko Claude. **Do używania PriceGuarda są zbędne.** Odpalasz je tylko wtedy, gdy chcesz sam zweryfikować liczby z tej strony.
 
+![Setki agentów Claude Code działających równolegle](assets/claude-code-agents-skala.png)
+
+*Pomiary puszczaliśmy na skalę — tą samą metodą, czyli wieloma agentami Claude Code naraz. Powyżej przykładowy zrzut takiego biegu (z innego naszego eksperymentu).*
+
 Wtedy potrzebujesz Pythona 3 i klucza [OpenRouter](https://openrouter.ai) (jeden klucz daje dostęp do wielu modeli):
 
 **macOS / Linux** — klucz w Keychain *albo* w zmiennej środowiskowej:
